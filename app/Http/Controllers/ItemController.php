@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Item;
 use Illuminate\Http\Request;
 //import Model "Post
 use App\Models\Post;
@@ -9,12 +11,9 @@ use Illuminate\View\View;
 
 class ItemController extends Controller
 {
-    public function index(): View
+    public function index()
     {
-        //get posts
-        $posts = Post::latest()->paginate(5);
-
-        //render view with posts
-        return view('posts.index', compact('posts'));
+        $items = Item::all();
+        return view('welcome', compact('items'));
     }
 }

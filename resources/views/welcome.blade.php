@@ -82,18 +82,9 @@
                     </button>
                 </div>
                 <div class="mt-8 grid grid-cols-6 md:grid-cols-6 gap-6 lg:gap-8">
-                    <a href="{{ route('order') }}"><img class="w-auto motion-safe:hover:scale-[1.01] h-auto transition-all duration-300 rounded-lg cursor-pointer filter hover:backdrop-grayscale-0" src="{{ url('images/item/item1.png') }}" alt="item1"></a>
-                    <a href="{{ route('order') }}"><img class="w-auto motion-safe:hover:scale-[1.01] h-auto transition-all duration-300 rounded-lg cursor-pointer filter hover:backdrop-grayscale-0" src="{{ url('images/item/item2.png') }}" alt="item2"></a>
-                    <a href="{{ route('order') }}"><img class="w-auto motion-safe:hover:scale-[1.01] h-auto transition-all duration-300 rounded-lg cursor-pointer filter hover:backdrop-grayscale-0" src="{{ url('images/item/item3.png') }}" alt="item3"></a>
-                    <a href="{{ route('order') }}"><img class="w-auto motion-safe:hover:scale-[1.01] h-auto transition-all duration-300 rounded-lg cursor-pointer filter hover:backdrop-grayscale-0" src="{{ url('images/item/item4.png') }}" alt="item4"></a>
-                    <a href="{{ route('order') }}"><img class="w-auto motion-safe:hover:scale-[1.01] h-auto transition-all duration-300 rounded-lg cursor-pointer filter hover:backdrop-grayscale-0" src="{{ url('images/item/item5.png') }}" alt="item5"></a>
-                    <a href="{{ route('order') }}"><img class="w-auto motion-safe:hover:scale-[1.01] h-auto transition-all duration-300 rounded-lg cursor-pointer filter hover:backdrop-grayscale-0" src="{{ url('images/item/item6.png') }}" alt="item6"></a>
-                    <a href="{{ route('order') }}"><img class="w-auto motion-safe:hover:scale-[1.01] h-auto transition-all duration-300 rounded-lg cursor-pointer filter hover:backdrop-grayscale-0" src="{{ url('images/item/item7.png') }}" alt="item7"></a>
-                    <a href="{{ route('order') }}"><img class="w-auto motion-safe:hover:scale-[1.01] h-auto transition-all duration-300 rounded-lg cursor-pointer filter hover:backdrop-grayscale-0" src="{{ url('images/item/item8.png') }}" alt="item8"></a>
-                    <a href="{{ route('order') }}"><img class="w-auto motion-safe:hover:scale-[1.01] h-auto transition-all duration-300 rounded-lg cursor-pointer filter hover:backdrop-grayscale-0" src="{{ url('images/item/item9.png') }}" alt="item9"></a>
-                    <a href="{{ route('order') }}"><img class="w-auto motion-safe:hover:scale-[1.01] h-auto transition-all duration-300 rounded-lg cursor-pointer filter hover:backdrop-grayscale-0" src="{{ url('images/item/item10.png') }}" alt="item10"></a>
-                    <a href="{{ route('order') }}"><img class="w-auto motion-safe:hover:scale-[1.01] h-auto transition-all duration-300 rounded-lg cursor-pointer filter hover:backdrop-grayscale-0" src="{{ url('images/item/item11.png') }}" alt="item11"></a>
-                    <a href="{{ route('order') }}"><img class="w-auto motion-safe:hover:scale-[1.01] h-auto transition-all duration-300 rounded-lg cursor-pointer filter hover:backdrop-grayscale-0" src="{{ url('images/item/item12.png') }}" alt="item1"></a>
+                    @foreach ($items as $item)
+                    <a href="/order/{{ $item->id }}"><img class="w-auto motion-safe:hover:scale-[1.01] h-auto transition-all duration-300 rounded-lg cursor-pointer filter hover:backdrop-grayscale-0" src="{{ url($item->image) }}" alt="item1"></a>
+                    @endforeach
                 </div>
             </div>
 

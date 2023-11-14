@@ -16,11 +16,11 @@
         @endif
 
         <div class="w-80">
-            <form method="POST" action="{{ route('login') }}">
+            <form method="POST" action="{{ route('doRegister') }}">
                 @csrf
 
                 <div>
-                    <input id="name" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" class="dark:bg-gray-800 dark:text-gray-200 mt-1 p-2 border rounded-3xl w-full" placeholder="Name">
+                    <input id="name" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" class="dark:bg-gray-800 dark:text-gray-200 mt-1 p-2 border rounded-3xl w-full" placeholder="Nama Lengkap">
                 </div>
 
                 <div class="mt-4 m-">
@@ -35,7 +35,7 @@
                     <input id="password_confirmation" type="password" name="password_confirmation" required autocomplete="new-password" class="dark:bg-gray-800 dark:text-gray-200 mt-1 p-2 border rounded-3xl w-full" placeholder="Konfirmasi Password">
                 </div>
 
-                @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
+                {{-- @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                 <div class="mt-4">
                     <x-label for="terms">
                         <div class="flex items-center">
@@ -50,7 +50,7 @@
                         </div>
                     </x-label>
                 </div>
-                @endif
+                @endif --}}
 
                 <div class="flex items-center justify-end mt-4">
                     <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">
