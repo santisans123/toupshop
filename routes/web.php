@@ -25,6 +25,7 @@ Route::controller(AuthecticationController::class)->group(function() {
 
 Route::controller(OrderController::class)->group(function() {
     Route::get('/order/{id}', 'detailItem')->name('order');
+    Route::post('/order', 'createOrderUser')->name('orderUser')->middleware('checkLogin');
     Route::get('/admin/create-order', 'createOrderAdmin')->name('orderAdmin');
     Route::get('/admin/recent-order', 'recentOrder')->name('recentOrder');
 });

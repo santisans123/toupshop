@@ -17,8 +17,14 @@ class UserSeeder extends Seeder
         User::insert(
             [
                 [
-                    'name' => 'user',
-                    'email' => 'user@gmail.com',
+                    'name' => 'user1',
+                    'email' => 'user1@gmail.com',
+                    'password' => Hash::make('user123'),
+                    'role' => 'user'
+                ],
+                [
+                    'name' => 'user2',
+                    'email' => 'user2@gmail.com',
                     'password' => Hash::make('user123'),
                     'role' => 'user'
                 ],
