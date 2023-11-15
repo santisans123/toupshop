@@ -24,7 +24,7 @@
 
 </head>
 
-<body >
+<body>
     @livewire('navigation-menu')
     <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
 
@@ -36,21 +36,13 @@
                     <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
                         <!-- Item 1 -->
                         <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-                            <img src="{{ url('images/images1.png') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            <img src="{{ url('images/images3.png') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                         </div>
                         <!-- Item 2 -->
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src="{{ url('images/images2.png') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            <img src="{{ url('images/images4.png') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                         </div>
                         <!-- Item 3 -->
-                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src="{{ url('images/images1.png') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-                        </div>
-                        <!-- Item 4 -->
-                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src="{{ url('images/images2.png') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-                        </div>
-                        <!-- Item 5 -->
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
                             <img src="{{ url('images/images1.png') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                         </div>
@@ -82,18 +74,102 @@
                     </button>
                 </div>
                 <div class="mt-8 grid grid-cols-6 md:grid-cols-6 gap-6 lg:gap-8">
-                    <a href="{{ route('order') }}"><img class="w-auto motion-safe:hover:scale-[1.01] h-auto transition-all duration-300 rounded-lg cursor-pointer filter hover:backdrop-grayscale-0" src="{{ url('images/item/item1.png') }}" alt="item1"></a>
-                    <a href="{{ route('order') }}"><img class="w-auto motion-safe:hover:scale-[1.01] h-auto transition-all duration-300 rounded-lg cursor-pointer filter hover:backdrop-grayscale-0" src="{{ url('images/item/item2.png') }}" alt="item2"></a>
-                    <a href="{{ route('order') }}"><img class="w-auto motion-safe:hover:scale-[1.01] h-auto transition-all duration-300 rounded-lg cursor-pointer filter hover:backdrop-grayscale-0" src="{{ url('images/item/item3.png') }}" alt="item3"></a>
-                    <a href="{{ route('order') }}"><img class="w-auto motion-safe:hover:scale-[1.01] h-auto transition-all duration-300 rounded-lg cursor-pointer filter hover:backdrop-grayscale-0" src="{{ url('images/item/item4.png') }}" alt="item4"></a>
-                    <a href="{{ route('order') }}"><img class="w-auto motion-safe:hover:scale-[1.01] h-auto transition-all duration-300 rounded-lg cursor-pointer filter hover:backdrop-grayscale-0" src="{{ url('images/item/item5.png') }}" alt="item5"></a>
-                    <a href="{{ route('order') }}"><img class="w-auto motion-safe:hover:scale-[1.01] h-auto transition-all duration-300 rounded-lg cursor-pointer filter hover:backdrop-grayscale-0" src="{{ url('images/item/item6.png') }}" alt="item6"></a>
-                    <a href="{{ route('order') }}"><img class="w-auto motion-safe:hover:scale-[1.01] h-auto transition-all duration-300 rounded-lg cursor-pointer filter hover:backdrop-grayscale-0" src="{{ url('images/item/item7.png') }}" alt="item7"></a>
-                    <a href="{{ route('order') }}"><img class="w-auto motion-safe:hover:scale-[1.01] h-auto transition-all duration-300 rounded-lg cursor-pointer filter hover:backdrop-grayscale-0" src="{{ url('images/item/item8.png') }}" alt="item8"></a>
-                    <a href="{{ route('order') }}"><img class="w-auto motion-safe:hover:scale-[1.01] h-auto transition-all duration-300 rounded-lg cursor-pointer filter hover:backdrop-grayscale-0" src="{{ url('images/item/item9.png') }}" alt="item9"></a>
-                    <a href="{{ route('order') }}"><img class="w-auto motion-safe:hover:scale-[1.01] h-auto transition-all duration-300 rounded-lg cursor-pointer filter hover:backdrop-grayscale-0" src="{{ url('images/item/item10.png') }}" alt="item10"></a>
-                    <a href="{{ route('order') }}"><img class="w-auto motion-safe:hover:scale-[1.01] h-auto transition-all duration-300 rounded-lg cursor-pointer filter hover:backdrop-grayscale-0" src="{{ url('images/item/item11.png') }}" alt="item11"></a>
-                    <a href="{{ route('order') }}"><img class="w-auto motion-safe:hover:scale-[1.01] h-auto transition-all duration-300 rounded-lg cursor-pointer filter hover:backdrop-grayscale-0" src="{{ url('images/item/item12.png') }}" alt="item1"></a>
+                    <a href="{{ route('order') }}" class="relative group inline-block">
+                        <div class="relative">
+                            <img class="w-auto h-auto duration-300 transform-gpu group-hover:scale-[1.01] rounded-lg cursor-pointer filter hover:blur-md hover:brightness-75" src="{{ url('images/item/item1.png') }}" alt="item1">
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <p class="text-white text-xl font-bold shadow-lg">Free Fire</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="{{ route('order') }}" class="relative group inline-block">
+                        <div class="relative">
+                            <img class="w-auto h-auto duration-300 transform-gpu group-hover:scale-[1.01] rounded-lg cursor-pointer filter hover:blur-md hover:brightness-75" src="{{ url('images/item/item2.png') }}" alt="item2">
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <p class="text-white text-xl font-bold shadow-lg">PUBG</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="{{ route('order') }}" class="relative group inline-block">
+                        <div class="relative">
+                            <img class="w-auto h-auto duration-300 transform-gpu group-hover:scale-[1.01] rounded-lg cursor-pointer filter hover:blur-md hover:brightness-75" src="{{ url('images/item/item3.png') }}" alt="item3">
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <p class="text-white text-xl font-bold shadow-lg">Genshin</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="{{ route('order') }}" class="relative group inline-block">
+                        <div class="relative">
+                            <img class="w-auto h-auto duration-300 transform-gpu group-hover:scale-[1.01] rounded-lg cursor-pointer filter hover:blur-md hover:brightness-75" src="{{ url('images/item/item4.png') }}" alt="item4">
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <p class="text-white text-xl font-bold shadow-lg">Call Of Duty</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="{{ route('order') }}" class="relative group inline-block">
+                        <div class="relative">
+                            <img class="w-auto h-auto duration-300 transform-gpu group-hover:scale-[1.01] rounded-lg cursor-pointer filter hover:blur-md hover:brightness-75" src="{{ url('images/item/item5.png') }}" alt="item5">
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <p class="text-white text-xl font-bold shadow-lg">Valorant</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="{{ route('order') }}" class="relative group inline-block">
+                        <div class="relative">
+                            <img class="w-auto h-auto duration-300 transform-gpu group-hover:scale-[1.01] rounded-lg cursor-pointer filter hover:blur-md hover:brightness-75" src="{{ url('images/item/item6.png') }}" alt="item6">
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <p class="text-white text-xl font-bold shadow-lg">Mobile Legend</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="{{ route('order') }}" class="relative group inline-block">
+                        <div class="relative">
+                            <img class="w-auto h-auto duration-300 transform-gpu group-hover:scale-[1.01] rounded-lg cursor-pointer filter hover:blur-md hover:brightness-75" src="{{ url('images/item/item7.png') }}" alt="item7">
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <p class="text-white text-xl font-bold shadow-lg">Undawn</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="{{ route('order') }}" class="relative group inline-block">
+                        <div class="relative">
+                            <img class="w-auto h-auto duration-300 transform-gpu group-hover:scale-[1.01] rounded-lg cursor-pointer filter hover:blur-md hover:brightness-75" src="{{ url('images/item/item8.png') }}" alt="item8">
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <p class="text-white text-xl font-bold shadow-lg">Sausage Man</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="{{ route('order') }}" class="relative group inline-block">
+                        <div class="relative">
+                            <img class="w-auto h-auto duration-300 transform-gpu group-hover:scale-[1.01] rounded-lg cursor-pointer filter hover:blur-md hover:brightness-75" src="{{ url('images/item/item9.png') }}" alt="item9">
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <p class="text-white text-xl font-bold shadow-lg">Leaguage of Man</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="{{ route('order') }}" class="relative group inline-block">
+                        <div class="relative">
+                            <img class="w-auto h-auto duration-300 transform-gpu group-hover:scale-[1.01] rounded-lg cursor-pointer filter hover:blur-md hover:brightness-75" src="{{ url('images/item/item10.png') }}" alt="item10">
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <p class="text-white text-xl font-bold shadow-lg">AOF</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="{{ route('order') }}" class="relative group inline-block">
+                        <div class="relative">
+                            <img class="w-auto h-auto duration-300 transform-gpu group-hover:scale-[1.01] rounded-lg cursor-pointer filter hover:blur-md hover:brightness-75" src="{{ url('images/item/item11.png') }}" alt="item11">
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <p class="text-white text-xl font-bold shadow-lg">M Seal</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="{{ route('order') }}" class="relative group inline-block">
+                        <div class="relative">
+                            <img class="w-auto h-auto duration-300 transform-gpu group-hover:scale-[1.01] rounded-lg cursor-pointer filter hover:blur-md hover:brightness-75" src="{{ url('images/item/item12.png') }}" alt="item12">
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <p class="text-white text-xl font-bold shadow-lg">Bigo Live</p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
 
