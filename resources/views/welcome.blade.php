@@ -74,102 +74,17 @@
                     </button>
                 </div>
                 <div class="mt-8 grid grid-cols-6 md:grid-cols-6 gap-6 lg:gap-8">
-                    <a href="{{ route('order') }}" class="relative group inline-block">
+                    @foreach ($items as $item)
+                    <a href="/order/{{ $item->id }}" class="relative group inline-block">
                         <div class="relative">
-                            <img class="w-auto h-auto duration-300 transform-gpu group-hover:scale-[1.01] rounded-lg cursor-pointer filter hover:blur-md hover:brightness-75" src="{{ url('images/item/item1.png') }}" alt="item1">
-                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                <p class="text-white text-xl font-bold shadow-lg">Free Fire</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="{{ route('order') }}" class="relative group inline-block">
-                        <div class="relative">
-                            <img class="w-auto h-auto duration-300 transform-gpu group-hover:scale-[1.01] rounded-lg cursor-pointer filter hover:blur-md hover:brightness-75" src="{{ url('images/item/item2.png') }}" alt="item2">
-                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                <p class="text-white text-xl font-bold shadow-lg">PUBG</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="{{ route('order') }}" class="relative group inline-block">
-                        <div class="relative">
-                            <img class="w-auto h-auto duration-300 transform-gpu group-hover:scale-[1.01] rounded-lg cursor-pointer filter hover:blur-md hover:brightness-75" src="{{ url('images/item/item3.png') }}" alt="item3">
-                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                <p class="text-white text-xl font-bold shadow-lg">Genshin</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="{{ route('order') }}" class="relative group inline-block">
-                        <div class="relative">
-                            <img class="w-auto h-auto duration-300 transform-gpu group-hover:scale-[1.01] rounded-lg cursor-pointer filter hover:blur-md hover:brightness-75" src="{{ url('images/item/item4.png') }}" alt="item4">
-                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                <p class="text-white text-xl font-bold shadow-lg">Call Of Duty</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="{{ route('order') }}" class="relative group inline-block">
-                        <div class="relative">
-                            <img class="w-auto h-auto duration-300 transform-gpu group-hover:scale-[1.01] rounded-lg cursor-pointer filter hover:blur-md hover:brightness-75" src="{{ url('images/item/item5.png') }}" alt="item5">
-                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                <p class="text-white text-xl font-bold shadow-lg">Valorant</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="{{ route('order') }}" class="relative group inline-block">
-                        <div class="relative">
-                            <img class="w-auto h-auto duration-300 transform-gpu group-hover:scale-[1.01] rounded-lg cursor-pointer filter hover:blur-md hover:brightness-75" src="{{ url('images/item/item6.png') }}" alt="item6">
-                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                <p class="text-white text-xl font-bold shadow-lg">Mobile Legend</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="{{ route('order') }}" class="relative group inline-block">
-                        <div class="relative">
-                            <img class="w-auto h-auto duration-300 transform-gpu group-hover:scale-[1.01] rounded-lg cursor-pointer filter hover:blur-md hover:brightness-75" src="{{ url('images/item/item7.png') }}" alt="item7">
-                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                <p class="text-white text-xl font-bold shadow-lg">Undawn</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="{{ route('order') }}" class="relative group inline-block">
-                        <div class="relative">
-                            <img class="w-auto h-auto duration-300 transform-gpu group-hover:scale-[1.01] rounded-lg cursor-pointer filter hover:blur-md hover:brightness-75" src="{{ url('images/item/item8.png') }}" alt="item8">
-                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                <p class="text-white text-xl font-bold shadow-lg">Sausage Man</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="{{ route('order') }}" class="relative group inline-block">
-                        <div class="relative">
-                            <img class="w-auto h-auto duration-300 transform-gpu group-hover:scale-[1.01] rounded-lg cursor-pointer filter hover:blur-md hover:brightness-75" src="{{ url('images/item/item9.png') }}" alt="item9">
-                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                <p class="text-white text-xl font-bold shadow-lg">Leaguage of Man</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="{{ route('order') }}" class="relative group inline-block">
-                        <div class="relative">
-                            <img class="w-auto h-auto duration-300 transform-gpu group-hover:scale-[1.01] rounded-lg cursor-pointer filter hover:blur-md hover:brightness-75" src="{{ url('images/item/item10.png') }}" alt="item10">
-                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                <p class="text-white text-xl font-bold shadow-lg">AOF</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="{{ route('order') }}" class="relative group inline-block">
-                        <div class="relative">
-                            <img class="w-auto h-auto duration-300 transform-gpu group-hover:scale-[1.01] rounded-lg cursor-pointer filter hover:blur-md hover:brightness-75" src="{{ url('images/item/item11.png') }}" alt="item11">
-                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                <p class="text-white text-xl font-bold shadow-lg">M Seal</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="{{ route('order') }}" class="relative group inline-block">
-                        <div class="relative">
-                            <img class="w-auto h-auto duration-300 transform-gpu group-hover:scale-[1.01] rounded-lg cursor-pointer filter hover:blur-md hover:brightness-75" src="{{ url('images/item/item12.png') }}" alt="item12">
+                            <img class="w-auto h-auto duration-300 transform-gpu group-hover:scale-[1.01] rounded-lg cursor-pointer filter hover:blur-md hover:brightness-75" src="{{ url($item->image) }}" alt="item">
                             <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                                 <p class="text-white text-xl font-bold shadow-lg">Bigo Live</p>
                             </div>
                         </div>
                     </a>
+                    @endforeach
+
                 </div>
             </div>
 

@@ -81,7 +81,7 @@
                                 <div class="w-1/2 py-2">
                                     <p>Customer</p>
                                 </div>
-                                <a href="{{ route('recent') }}">
+                                <a href="{{ route('recentOrder') }}">
                                     <div class="w-2/2 py-2">
                                         <div class="grid grid-cols-1 md:grid-cols-2 gap-1">
                                             <svg class="w-6 h-6 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -96,7 +96,7 @@
                                 <div class="w-1/2 py-2">
                                     <p>Id Order</p>
                                 </div>
-                                <a href="{{ route('order_id') }}">
+                                <a href="{{ route('orderAdmin') }}">
                                     <div class="w-2/2 py-2">
                                         <div class="grid grid-cols-1 md:grid-cols-2 gap-1">
                                             <svg class="w-6 h-6 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">

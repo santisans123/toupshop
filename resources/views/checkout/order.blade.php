@@ -36,10 +36,10 @@
                 <div class="block p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     <div class="my-4 grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div class="col-span-1">
-                            <img class="w-auto motion-safe:hover:scale-[1.01] max-h-24 transition-all duration-300 rounded-lg cursor-pointer filter hover:backdrop-grayscale-0" src="{{ url('images/item/item1.png') }}" alt="item1">
+                            <img class="w-auto motion-safe:hover:scale-[1.01] max-h-24 transition-all duration-300 rounded-lg cursor-pointer filter hover:backdrop-grayscale-0" src="{{ url($item->image) }}" alt="item1">
                         </div>
                         <div class="col-span-1">
-                            <p class="text-left self-start">Mobile Legends</p>
+                            <p class="text-left self-start">{{ $item->name }}</p>
                         </div>
                     </div>
                     <hr>
