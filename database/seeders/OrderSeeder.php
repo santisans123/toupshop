@@ -23,7 +23,8 @@ class OrderSeeder extends Seeder
                     'nominal_id' => 1,
                     'payment' => 'BCA',
                     'account_name' => 'user 1',
-                    'whatsapp' => '08961276371623'
+                    'whatsapp' => '08961276371623',
+                    'status' => 0
                 ],
                 [
                     'user_id' => 2,
@@ -33,7 +34,8 @@ class OrderSeeder extends Seeder
                     'nominal_id' => 2,
                     'payment' => 'Indomaret',
                     'account_name' => 'user 2',
-                    'whatsapp' => '081928319892312'
+                    'whatsapp' => '081928319892312',
+                    'status' => 1
                 ],
             ]
         );

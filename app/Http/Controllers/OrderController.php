@@ -30,9 +30,22 @@ class OrderController extends Controller
         return view('admin/id_order');
     }
 
+    public function updateOrder(Request $request)
+    {
+        Order::where('id', $request->id_order)->update(['status' => 1]);
+        return redirect('/admin/order-checkout');
+    }
+
+    public function deleteOrder(Request $request)
+    {
+        Order::where('id', $request->id_order)->delete();
+        return redirect('/admin/order-checkout');
+    }
+
     public function orderCheckoutAdmin()
     {
-        return view('admin/order_checkout');
+        $orders = Order::all();
+        return view('admin/order_checkout', compact('orders'));
     }
 
 

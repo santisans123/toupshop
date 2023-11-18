@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('payment');
             $table->string('account_name');
             $table->string('whatsapp');
+            $table->boolean('status')->nullable()->default(0);
             $table->timestamps();
         });
     }
