@@ -41,21 +41,6 @@
                             <hr class="my-2">
                             <div class="flex justify-between">
                                 <div class="w-1/2 py-2">
-                                    <p>Group</p>
-                                </div>
-                                <a href="">
-                                    <div class="w-2/2 py-2">
-                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-1">
-                                            <svg class="w-6 h-6 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-                                            </svg>
-                                            <p>Add</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="flex justify-between">
-                                <div class="w-1/2 py-2">
                                     <p>User</p>
                                 </div>
                                 <a href="">
@@ -112,7 +97,7 @@
                                 <div class="w-1/2 py-2">
                                     <p>Item Order</p>
                                 </div>
-                                <a href="">
+                                <a href="{{ route('itemOrder') }}">
                                     <div class="w-2/2 py-2">
                                         <div class="grid grid-cols-1 md:grid-cols-2 gap-1">
                                             <svg class="w-6 h-6 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">

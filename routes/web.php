@@ -28,6 +28,7 @@ Route::controller(OrderController::class)->group(function() {
     Route::post('/order', 'createOrderUser')->name('orderUser')->middleware('checkLogin');
     Route::get('/admin/create-order', 'createOrderAdmin')->name('orderAdmin');
     Route::get('/admin/recent-order', 'recentOrder')->name('recentOrder');
+    Route::get('/admin/item-order', 'itemOrderAdmin')->name('itemOrder');
 });
 
 Route::get('/', [ItemController::class, 'index'])->name('home');

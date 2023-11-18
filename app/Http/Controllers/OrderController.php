@@ -29,7 +29,12 @@ class OrderController extends Controller
     {
         return view('admin/id_order');
     }
-    
+
+    public function itemOrderAdmin()
+    {
+        return view('admin/item_order');
+    }
+
 
     public function recentOrder()
     {
