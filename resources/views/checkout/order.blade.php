@@ -28,7 +28,7 @@
     @livewire('navigation-menu')
     <div class="px-32 py-10 dark:text-white bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
         <div class="w-full">
-            <img class="h-auto w-full rounded-lg" src="{{ url('images/header.png') }}" alt="header_image">
+            <img class="h-auto w-full rounded-lg" src="{{ url('images/images3.png') }}" alt="header_image">
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full mt-4">
@@ -69,7 +69,7 @@
                                     <div class="col-span-1">
                                         <input type="text" id="uid" name="uid" class="dark:text-gray-800 mt-1 p-2 border rounded-3xl w-full" placeholder="User ID">
                                     </div>
-    
+
                                     <div class="col-span-1">
                                         <input type="text" id="serverid" name="serverid" class="dark:text-gray-800 mt-1 p-2 border rounded-3xl w-full" placeholder="Server ID">
                                     </div>
@@ -77,12 +77,12 @@
                                 <p class="mt-4 text-sm text-gray-300">Silahkan Masukkan User ID & Server Anda Dan Pastikan Benar.</p>
                             </div>
                         </div>
-    
+
                         <div class="row-span-1">
                             <div class="block p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                                 <h4>Pilih Nominal Top Up</h4>
                                 <hr class="mt-2 mb-6">
-    
+
                                 <ul class="grid w-full gap-6 md:grid-cols-3">
                                     @foreach ($nominals as $nominal)
                                     <li>
@@ -107,13 +107,13 @@
                                 </ul>
                             </div>
                         </div>
-    
+
                         <div class="row-span-1" id="accordion-open" data-accordion="close">
                             <div class="grid grid-rows-1 gap-4 p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                                 <h4>Pilih Pembayaran</h4>
                                 <hr>
                                 <div id="accordion-open" data-accordion="close">
-    
+
                                     <h2 id="accordion-open-heading-2">
                                         <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 rounded-t-xl focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-open-body-2" aria-expanded="true" aria-controls="accordion-open-body-2">
                                             <div class="mt-2 w-full px-4 grid grid-rows-1 ">
@@ -126,7 +126,7 @@
                                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5" />
                                                     </svg>
                                                 </div>
-    
+
                                             </div>
                                         </button>
                                     </h2>
@@ -193,7 +193,7 @@
                                                     <div class="block">
                                                         <div class="w-full text-md font-semibold">Klik Gambar QRIS dibawah untuk melanjutkan</div>
                                                         <img src="{{ url('images/payment/qris.jpeg') }}" class="col-span-1 h-84 " alt="Logo" />
-    
+
                                                     </div>
                                                 </label>
                                             </li>
@@ -211,7 +211,7 @@
                                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5" />
                                                     </svg>
                                                 </div>
-    
+
                                             </div>
                                         </button>
                                     </h2>
@@ -249,7 +249,7 @@
                                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5" />
                                                     </svg>
                                                 </div>
-    
+
                                             </div>
                                         </button>
                                     </h2>
@@ -302,9 +302,9 @@
                                             </li>
                                         </ul>
                                     </div>
-    
+
                                 </div>
-    
+
                                 <h4>Nama Pemilik Akun Topup</h4>
                                 <hr>
                                 <div class="mt-2">
@@ -312,11 +312,11 @@
                                 </div>
                             </div>
                         </div>
-    
-    
+
+
                         <div class="row-span-1">
                             <div class="block p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-    
+
                                 <h4>Nomor Whatsapp</h4>
                                 <hr>
                                 <div class="mt-4">

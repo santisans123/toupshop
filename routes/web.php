@@ -29,6 +29,7 @@ Route::controller(OrderController::class)->group(function() {
     Route::get('/admin/create-order', 'createOrderAdmin')->name('orderAdmin');
     Route::get('/admin/recent-order', 'recentOrder')->name('recentOrder');
     Route::get('/admin/item-order', 'itemOrderAdmin')->name('itemOrder');
+    Route::get('/admin/list-items', 'itemListAdmin')->name('listItems');
 });
 
 Route::get('/', [ItemController::class, 'index'])->name('home');

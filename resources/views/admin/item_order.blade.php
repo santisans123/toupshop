@@ -6,7 +6,10 @@
 
         <div class="flex justify-between">
             <h4 class="text-left">Item Order Games</h4>
-            <button class="mx-1 dark:hover:bg-green-500 dark:bg-green-600 w-28 text-center mt-1 p-2 rounded-lg ">List Item</button>
+
+            <a href="{{ route('listItems') }}" class="mx-1 dark:hover:bg-green-500 dark:bg-green-600 w-28 text-center mt-1 p-2 rounded-lg">
+                <button>List Item</button>
+            </a>
         </div>
 
         <hr class="my-2">

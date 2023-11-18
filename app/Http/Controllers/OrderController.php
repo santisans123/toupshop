@@ -35,6 +35,11 @@ class OrderController extends Controller
         return view('admin/item_order');
     }
 
+    public function itemListAdmin()
+    {
+        return view('admin/list_items');
+    }
+
 
     public function recentOrder()
     {
