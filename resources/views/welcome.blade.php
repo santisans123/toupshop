@@ -79,7 +79,7 @@
                         <div class="relative">
                             <img class="w-auto h-auto duration-300 transform-gpu group-hover:scale-[1.01] rounded-lg cursor-pointer filter hover:blur-md hover:brightness-75" src="{{ url($item->image) }}" alt="item">
                             <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                <p class="text-white text-xl font-bold shadow-lg">Bigo Live</p>
+                                <p class="text-white text-xl font-bold shadow-lg">{{$item->name}}</p>
                             </div>
                         </div>
                     </a>
