@@ -105,13 +105,6 @@
                             </div>
                         </div>
                     </form>
-
-                    <!-- Close Modal Button -->
-                    <a href="#" class="absolute top-4 right-4 text-gray-700 hover:text-gray-900" onclick="closeModal()">
-                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                        </svg>
-                    </a>
                 </div>
             </div>
         </div>

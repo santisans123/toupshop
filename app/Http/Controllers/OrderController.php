@@ -40,6 +40,11 @@ class OrderController extends Controller
         return view('admin/list_items');
     }
 
+    public function orderCheckoutAdmin()
+    {
+        return view('admin/order_checkout');
+    }
+
 
     public function recentOrder()
     {
