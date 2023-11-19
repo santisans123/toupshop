@@ -14,4 +14,8 @@ class Nominal extends Model
     public function order(){
         return $this->hasMany(Order::class);
     }
+
+    public function item(){
+        return $this->belongsTo(Item::class);
+    }
 }

@@ -48,30 +48,6 @@ class OrderController extends Controller
         return view('admin/order_checkout', compact('orders'));
     }
 
-
-    public function productPriceAdmin()
-    {
-        $orders = Order::all();
-        return view('admin/product_price', compact('orders'));
-    }
-
-
-    public function listPriceAdmin()
-    {
-        $orders = Order::all();
-        return view('admin/list_price', compact('orders'));
-    }
-
-
-
-    public function listUserAdmin()
-    {
-        $orders = Order::all();
-        return view('admin/list_user', compact('orders'));
-    }
-
-
-
     public function recentOrder()
     {
         $histories = Order::all();

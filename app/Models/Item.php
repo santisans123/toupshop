@@ -14,4 +14,8 @@ class Item extends Model
     public function order(){
         return $this->hasMany(Order::class);
     }
+
+    public function nominal(){
+        return $this->hasMany(Nominal::class);
+    }
 }

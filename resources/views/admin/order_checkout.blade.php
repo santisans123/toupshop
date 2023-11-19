@@ -29,8 +29,8 @@
                                     <td>
                                         <center>{{ ++$key }}</center>
                                     </td>
-                                    <td>{{ $order->user->name }}</td>
-                                    <td>{{ $order->item->name }}</td>
+                                    <td>{{ optional($order->user)->name ?: 'User tidak ditemukan' }}</td>
+                                    <td>{{ optional($order->item)->name ?: 'Produk tidak ditemukan' }}</td>
                                     <td class="{{ $order->status == 0 ? 'text-red-800' : 'text-green-800' }}">
                                         <center>{{ $order->status == 0 ? 'Belum dibayar' : 'Sukses' }}</center>
                                     </td>
@@ -40,7 +40,7 @@
                                                 <i class="fas fa-eye text-xl dark:text-blue-500"></i>
                                             </a>
                                             @if ($order->status == 0)
-                                            <a href="#" class="mx-1 p-2 rounded-lg" onclick="openDeleteModal('{{ $order->id }}')"'>
+                                            <a href="#" class="mx-1 p-2 rounded-lg" onclick="openDeleteModal('{{ $order->id }}')">
                                                 <i class="dark:text-red-600 fas fa-trash text-xl"></i>
                                             </a>
                                             @else

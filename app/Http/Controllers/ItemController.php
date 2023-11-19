@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Item;
+use App\Models\Nominal;
 use Illuminate\Http\Request;
 //import Model "Post
 use App\Models\Post;
@@ -57,5 +58,42 @@ class ItemController extends Controller
         Item::where('id', $request->id_item)->delete();
 
         return redirect('/admin/list-items');
+    }
+
+    public function listPrice()
+    {
+        $items = Item::all();
+        $nominals = Nominal::all();
+        
+        return view('admin/list_price', compact(['nominals', 'items']));
+    }
+
+    public function createPrice()
+    {
+        $items = Item::all();
+        return view('admin/product_price', compact(['items']));
+    }
+
+    public function createPriceStore(Request $request)
+    {
+        $request['item_id'] = $request->selectedItem;
+        Nominal::create($request->all());
+
+        return redirect()->route('listPrice');
+    }
+
+    public function updatePrice(Request $request)
+    {
+        $request['item_id'] = $request->selectedItem;
+        Nominal::where('id', $request->id_nominal)->update($request->except(['_token', 'id_nominal', 'selectedItem', 'selectedItemName']));
+
+        return redirect()->route('listPrice');
+    }
+
+    public function deletePrice(Request $request)
+    {
+        Nominal::where('id', $request->id_nominal)->delete();
+
+        return redirect()->route('listPrice');
     }
 }

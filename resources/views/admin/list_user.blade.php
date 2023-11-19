@@ -21,48 +21,51 @@
                     <thead>
                         <tr>
                             <th data-priority="1">No</th>
-                            <th data-priority="2">Name</th>
+                            <th data-priority="2">Nama Lengkap</th>
                             <th data-priority="3">Email</th>
                             <th data-priority="3">Transaksi Terakhir</th>
                             <th data-priority="4">Action</th>
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($users as $key=>$user)
                         <tr>
-                            <td>1</td>
-                            <td>Santi</td>
-                            <td>santitok@gmail.com</td>
-                            <td>10-11-2023 11.07</td>
+                            <td><center>{{ ++$key }}</center></td>
+                            <td>{{ $user->name }}</td>
+                            <td>{{ $user->email }}</td>
+                            <td><center>{{ date_format($user->last_transaction->created_at,"d-m-Y H:i") }}</center></td>
                             <td>
                                 <div>
-                                    <a href="#" class="mx-1 p-2 rounded-lg" onclick="openModal()">
+                                    <a href="#" class="mx-1 p-2 rounded-lg" onclick="openDetailModal('{{ $user->id }}')">
                                         <i class="fas fa-eye text-xl text-blue-500"></i>
                                     </a>
 
-                                    <a href="#" class="mx-1 p-2 rounded-lg">
+                                    <a href="#" class="mx-1 p-2 rounded-lg" onclick="openDeleteModal('{{ $user->id }}')">
                                         <i class="dark:text-red-600 fas fa-trash text-xl"></i>
                                     </a>
                                 </div>
                             </td>
                         </tr>
 
-                        <!-- Rest of your data (refer to https://datatables.net/examples/server_side/ for server side processing)-->
-
-                        <tr>
-                            <td>1</td>
-                            <td>Fidisa</td>
-                            <td>fids@gmail.com</td>
-                            <td>12-11-2023 <br> 11.07</td>
-                            <td>
-                                <a href="#" class="mx-1 p-2 rounded-lg" onclick="openModal()">
-                                    <i class="fas fa-eye text-xl text-blue-500"></i>
-                                </a>
-
-                                <a href="#" class="mx-1 p-2 rounded-lg">
-                                    <i class="dark:text-red-600 fas fa-trash text-xl"></i>
-                                </a>
-                            </td>
-                        </tr>
+                        <div id="deleteModal-{{ $user->id }}" class="fixed inset-0 z-50 hidden overflow-auto bg-black bg-opacity-50">
+                            <div class="flex justify-center items-center min-h-screen">
+                                <div class="bg-white text-gray-800 p-8 rounded-lg w-full max-w-xl">
+                                    <!-- Modal Content -->
+                                    <center><h3 class="text-xl font-bold mb-4">Apakah Anda yakin ingin menghapus user ini?</h3></center>
+                                    <div class="flex-shrink-0 mt-4 text-center">
+                                        <div class="inline-flex items-center justify-center">
+                                            <button class="text-gray-200 bg-gray-600 hover:text-gray-300 py-2 px-4 rounded-md" onclick="closeDeleteModal('{{ $user->id }}')">Tidak</button>
+                                            <form action="{{ route('deleteUser') }}" method="POST">
+                                                @csrf
+                                                <input type="hidden" name="id_user" value="{{ $user->id }}">
+                                                <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded-md ml-2">Yakin</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
                     </tbody>
 
                 </table>
@@ -70,7 +73,9 @@
             <!--/Card-->
         </div>
         <!-- Modal -->
-        <div id="modal" class="fixed inset-0 z-50 hidden overflow-auto bg-black bg-opacity-50">
+        <!-- Detail Modal -->
+        @foreach ($users as $user)
+        <div id="detailModal-{{ $user->id }}" class="fixed inset-0 z-50 hidden overflow-auto bg-black bg-opacity-50">
             <div class="flex justify-center items-center min-h-screen">
                 <div class="bg-white text-gray-800 p-8 rounded-lg w-full max-w-3xl">
                     <!-- Modal Content -->
@@ -79,24 +84,24 @@
                         <table class="min-w-full bg-white border rounded-md">
                             <tbody>
                                 <tr>
-                                    <td class="py-2 px-4 border-b">Name</td>
-                                    <td class="py-2 px-4 border-b">Santi</td>
+                                    <td class="py-2 px-4 border-b">Nama Lengkap</td>
+                                    <td class="py-2 px-4 border-b">{{ $user->name }}</td>
                                 </tr>
                                 <tr>
-                                    <td class="py-2 px-4 border-b">email</td>
-                                    <td class="py-2 px-4 border-b">Santitok21@gmail.com</td>
+                                    <td class="py-2 px-4 border-b">Email</td>
+                                    <td class="py-2 px-4 border-b">{{ $user->email }}</td>
                                 </tr>
                                 <tr>
                                     <td class="py-2 px-4 border-b">Transaksi Terakhir</td>
-                                    <td class="py-2 px-4 border-b">12-11-2023 11.07</td>
+                                    <td class="py-2 px-4 border-b">{{ date_format($user->last_transaction->created_at,"d-m-Y H:i") }}</td>
                                 </tr>
                                 <tr>
                                     <td class="py-2 px-4 border-b">Item Terakhir</td>
-                                    <td class="py-2 px-4 border-b">Mobile Legends</td>
+                                    <td class="py-2 px-4 border-b">{{ $user->last_transaction->item->name }}</td>
                                 </tr>
                                 <tr>
                                     <td class="py-2 px-4 border-b">Banyaknya Transaksi</td>
-                                    <td class="py-2 px-4 border-b">16</td>
+                                    <td class="py-2 px-4 border-b">{{ $user->total_transaction }}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -105,13 +110,13 @@
                         <!-- Tombol Keluar Modal -->
                         <div class="flex-shrink-0">
                             <button class="text-gray-200 bg-gray-600 hover:text-gray-300 py-2 px-4 rounded-md"
-                                onclick="closeModal()">Tutup Modal</button>
+                            onclick="closeDetailModal('{{ $user->id }}')">Tutup Modal</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!--/container-->
+    @endforeach
 
         <!-- jQuery -->
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -135,13 +140,25 @@
 
 <!-- Modal JavaScript -->
 <script>
-    function openModal() {
-        document.getElementById('modal').classList.remove('hidden');
-    }
+    function openDetailModal(userId) {
+            var modalId = 'detailModal-' + userId;
+            document.getElementById(modalId).classList.remove('hidden');
+        }
 
-    function closeModal() {
-        document.getElementById('modal').classList.add('hidden');
-    }
+        function closeDetailModal(userId) {
+            var modalId = 'detailModal-' + userId;
+            document.getElementById(modalId).classList.add('hidden');
+        }
+
+        function openDeleteModal(userId) {
+            var modalId = 'deleteModal-' + userId;
+            document.getElementById(modalId).classList.remove('hidden');
+        }
+
+        function closeDeleteModal(userId) {
+            var modalId = 'deleteModal-' + userId;
+            document.getElementById(modalId).classList.add('hidden');
+        }
 </script>
 
 <script src="../path/to/datatables.min.js"></script>

@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthecticationController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,9 +32,6 @@ Route::controller(OrderController::class)->group(function() {
     Route::post('/admin/delete-order', 'DeleteOrder')->name('deleteOrder');
     Route::get('/admin/recent-order', 'recentOrder')->name('recentOrder');
     Route::get('/admin/order-checkout', 'orderCheckoutAdmin')->name('orderCheckout');
-    Route::get('/admin/product-price', 'productPriceAdmin')->name('productPrice');
-    Route::get('/admin/list-price', 'listPriceAdmin')->name('listPrice');
-    Route::get('/admin/list-user', 'listUserAdmin')->name('listUser');
 });
 
 Route::controller(ItemController::class)->group(function() {
@@ -43,6 +41,16 @@ Route::controller(ItemController::class)->group(function() {
     Route::post('/admin/create-item', 'createItemStore')->name('createItemStore');
     Route::post('/admin/update-item', 'updateItem')->name('updateItem');
     Route::post('/admin/delete-item', 'deleteItem')->name('deleteItem');
+    Route::get('/admin/list-price', 'listPrice')->name('listPrice');
+    Route::get('/admin/create-price', 'createPrice')->name('productPrice');
+    Route::post('/admin/create-price-store', 'createPriceStore')->name('createPrice');
+    Route::post('/admin/update-price', 'updatePrice')->name('updatePrice');
+    Route::post('/admin/delete-price', 'deletePrice')->name('deletePrice');
+});
+
+Route::controller(UserController::class)->group(function() {
+    Route::get('/admin/list-user', 'listUser')->name('listUser');
+    Route::post('/admin/delete-user', 'deleteUser')->name('deleteUser');
 });
 
 // Route::get('/', function () {

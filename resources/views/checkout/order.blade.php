@@ -67,11 +67,11 @@
                                 <hr>
                                 <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
                                     <div class="col-span-1">
-                                        <input type="text" id="uid" name="uid" class="dark:text-gray-800 mt-1 p-2 border rounded-3xl w-full" placeholder="User ID">
+                                        <input type="text" id="uid" name="uid" class="dark:text-gray-800 mt-1 p-2 border rounded-3xl w-full" placeholder="User ID" required>
                                     </div>
 
                                     <div class="col-span-1">
-                                        <input type="text" id="serverid" name="serverid" class="dark:text-gray-800 mt-1 p-2 border rounded-3xl w-full" placeholder="Server ID">
+                                        <input type="text" id="serverid" name="serverid" class="dark:text-gray-800 mt-1 p-2 border rounded-3xl w-full" placeholder="Server ID" required>
                                     </div>
                                 </div>
                                 <p class="mt-4 text-sm text-gray-300">Silahkan Masukkan User ID & Server Anda Dan Pastikan Benar.</p>
@@ -308,7 +308,7 @@
                                 <h4>Nama Pemilik Akun Topup</h4>
                                 <hr>
                                 <div class="mt-2">
-                                    <input type="text" id="account_name" name="account_name" class=" dark:text-gray-800 p-2 border rounded-3xl w-full dark:text-dark" placeholder="Nama Akun">
+                                    <input type="text" id="account_name" name="account_name" class=" dark:text-gray-800 p-2 border rounded-3xl w-full dark:text-dark" placeholder="Nama Akun" required>
                                 </div>
                             </div>
                         </div>
@@ -320,7 +320,7 @@
                                 <h4>Nomor Whatsapp</h4>
                                 <hr>
                                 <div class="mt-4">
-                                    <input type="number" id="whatsapp" name="whatsapp" class="dark:text-gray-800 mt-1 p-2 border rounded-3xl w-full" placeholder="08xxxxxxxxxxxx">
+                                    <input type="number" id="whatsapp" name="whatsapp" class="dark:text-gray-800 mt-1 p-2 border rounded-3xl w-full" placeholder="08xxxxxxxxxxxx" required>
                                 </div>
                                 <p class="mt-4 text-sm text-gray-300">Bukti pembelianmu akan kami kirimkan ke WhatsApp.</p>
                                 <button type="submit" class="dark:hover:bg-blue-500 bg-blue-400 w-48 text-center mt-1 p-2 rounded-3xl" form="orderForm">

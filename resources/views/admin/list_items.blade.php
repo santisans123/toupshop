@@ -89,7 +89,7 @@
                                         <div class="flex justify-between">
                                             <!-- Tombol Keluar Modal -->
                                             <div class="flex-shrink-0">
-                                                <button class="text-gray-200 bg-gray-600 hover:text-gray-300 py-2 px-4 rounded-md" onclick="closeModal('{{ $item->id }}')">Tutup Modal</button>
+                                                <button type="button" class="text-gray-200 bg-gray-600 hover:text-gray-300 py-2 px-4 rounded-md" onclick="closeModal('{{ $item->id }}')">Tutup Modal</button>
                                             </div>
                                             <!-- Tombol Simpan -->
                                             <div class="flex-shrink-0">
