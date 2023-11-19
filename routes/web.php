@@ -27,13 +27,24 @@ Route::controller(OrderController::class)->group(function() {
     Route::get('/order/{id}', 'detailItem')->name('order');
     Route::post('/order', 'createOrderUser')->name('orderUser')->middleware('checkLogin');
     Route::get('/admin/create-order', 'createOrderAdmin')->name('orderAdmin');
+    Route::post('/admin/update-order', 'updateOrder')->name('updateOrder');
+    Route::post('/admin/delete-order', 'DeleteOrder')->name('deleteOrder');
     Route::get('/admin/recent-order', 'recentOrder')->name('recentOrder');
-    Route::get('/admin/item-order', 'itemOrderAdmin')->name('itemOrder');
-    Route::get('/admin/list-items', 'itemListAdmin')->name('listItems');
     Route::get('/admin/order-checkout', 'orderCheckoutAdmin')->name('orderCheckout');
+    Route::get('/admin/product-price', 'productPriceAdmin')->name('productPrice');
+    Route::get('/admin/list-price', 'listPriceAdmin')->name('listPrice');
+    Route::get('/admin/list-user', 'listUserAdmin')->name('listUser');
 });
 
-Route::get('/', [ItemController::class, 'index'])->name('home');
+Route::controller(ItemController::class)->group(function() {
+    Route::get('/', 'index')->name('home');
+    Route::get('/admin/list-items', 'listItem')->name('listItems');
+    Route::get('/admin/create-item', 'createItem')->name('createItem');
+    Route::post('/admin/create-item', 'createItemStore')->name('createItemStore');
+    Route::post('/admin/update-item', 'updateItem')->name('updateItem');
+    Route::post('/admin/delete-item', 'deleteItem')->name('deleteItem');
+});
+
 // Route::get('/', function () {
 //     return view('welcome');
 // });

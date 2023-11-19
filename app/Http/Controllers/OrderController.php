@@ -30,20 +30,46 @@ class OrderController extends Controller
         return view('admin/id_order');
     }
 
-    public function itemOrderAdmin()
+    public function updateOrder(Request $request)
     {
-        return view('admin/item_order');
+        Order::where('id', $request->id_order)->update(['status' => 1]);
+        return redirect('/admin/order-checkout');
     }
 
-    public function itemListAdmin()
+    public function deleteOrder(Request $request)
     {
-        return view('admin/list_items');
+        Order::where('id', $request->id_order)->delete();
+        return redirect('/admin/order-checkout');
     }
 
     public function orderCheckoutAdmin()
     {
-        return view('admin/order_checkout');
+        $orders = Order::all();
+        return view('admin/order_checkout', compact('orders'));
     }
+
+
+    public function productPriceAdmin()
+    {
+        $orders = Order::all();
+        return view('admin/product_price', compact('orders'));
+    }
+
+
+    public function listPriceAdmin()
+    {
+        $orders = Order::all();
+        return view('admin/list_price', compact('orders'));
+    }
+
+
+
+    public function listUserAdmin()
+    {
+        $orders = Order::all();
+        return view('admin/list_user', compact('orders'));
+    }
+
 
 
     public function recentOrder()

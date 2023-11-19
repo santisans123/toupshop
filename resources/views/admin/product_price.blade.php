@@ -5,142 +5,80 @@
     <div class="block p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
 
         <div class="flex justify-between">
-            <a href="{{ route('itemOrder') }}" class="mx-1 dark:hover:bg-gray-500 dark:bg-gray-600 w-28 text-center mt-1 p-2 rounded-lg">
-                <button>Back</button>
-            </a>
-            <h4 class="text-left">Product Price List</h4>
+            <h4 class="text-left">Product Price</h4>
 
+            <a href="{{ route('listPrice') }}" class="mx-1 dark:hover:bg-green-500 dark:bg-green-600 w-28 text-center mt-1 p-2 rounded-lg">
+                <button>List Price</button>
+            </a>
         </div>
 
         <hr class="my-2">
-        <!--Container-->
-        <div class="container ">
 
-            <!--Card-->
-            <div id='recipients' class="p-8 mt-6 lg:mt-0 rounded shadow bg-white text-gray-800">
+        <form action="/admin/create-item" method="POST" enctype="multipart/form-data">
+            @csrf
 
 
-                <table id="example" class="stripe hover" style="width:100%; padding-top: 1em;  padding-bottom: 1em;">
-                    <thead>
-                        <tr>
-                            <th data-priority="1">No</th>
-                            <th data-priority="2">Name</th>
-                            <th data-priority="3">Images</th>
-                            <th data-priority="4">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Mobile Legends</td>
-                            <td>Images</td>
-                            <td>
-                                <div>
-                                    <a href="#" class="mx-1 p-2 rounded-lg" onclick="openModal()">
-                                        <i class="fas fa-edit text-xl text-blue-500"></i>
-                                    </a>
+            <div class="flex justify-between">
+                <div class="w-1/2 py-2">
+                    <p>Jenis Game</p>
+                </div>
 
-                                    <a href="#" class="mx-1 p-2 rounded-lg">
-                                        <i class="dark:text-red-600 fas fa-trash text-xl"></i>
-                                    </a>
-                                </div>
-                            </td>
-                        </tr>
+                <div class="relative">
+                    <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="w-96 dark:bg-gray-800 dark:text-gray-200 mt-1 border rounded-3xl flex items-center justify-between px-4 py-2">
+                        Dropdown button
+                        <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
+                        </svg>
+                    </button>
 
-                        <!-- Rest of your data (refer to https://datatables.net/examples/server_side/ for server side processing)-->
-
-                        <tr>
-                            <td>1</td>
-                            <td>Mobile Legends</td>
-                            <td>Images</td>
-                            <td>
-                                <a href="#" class="mx-1 p-2 rounded-lg" onclick="openModal()">
-                                    <i class="fas fa-edit text-xl text-blue-500"></i>
-                                </a>
-
-                                <a href="#" class="mx-1 p-2 rounded-lg">
-                                    <i class="dark:text-red-600 fas fa-trash text-xl"></i>
-                                </a>
-                            </td>
-                        </tr>
-                    </tbody>
-
-                </table>
-            </div>
-            <!--/Card-->
-        </div>
-        <!-- Modal -->
-        <div id="modal" class="fixed inset-0 z-50 hidden overflow-auto bg-black bg-opacity-50">
-            <div class="flex justify-center items-center min-h-screen">
-                <div class="bg-white text-gray-800 p-8 rounded-lg w-96">
-                    <!-- Modal Content -->
-                    <h2 class="text-2xl font-bold mb-4">Edit Item Game</h2>
-                    <form>
-                        <!-- Nama Input -->
-                        <div class="mb-4">
-                            <label for="nama" class="block text-sm font-medium text-gray-700">Nama</label>
-                            <input type="text" id="nama" name="nama" class="mt-1 p-2 border rounded-md w-full" placeholder="Masukkan nama">
-                        </div>
-
-                        <!-- Keterangan Input -->
-                        <div class="mb-4">
-                            <label for="keterangan" class="block text-sm font-medium text-gray-700">Keterangan</label>
-                            <textarea id="keterangan" name="keterangan" class="mt-1 p-2 border rounded-md w-full" placeholder="Masukkan keterangan"></textarea>
-                        </div>
-
-                        <!-- Upload Gambar Input -->
-                        <div class="mb-4">
-                            <label for="gambar" class="block text-sm font-medium text-gray-700">Upload Gambar</label>
-                            <input type="file" id="gambar" name="gambar" class="mt-1 p-2 border rounded-md w-full">
-                        </div>
-
-                        <div class="flex justify-between">
-                            <!-- Tombol Keluar Modal -->
-                            <div class="flex-shrink-0">
-                                <button class="text-gray-200 bg-gray-600 hover:text-gray-300 py-2 px-4 rounded-md" onclick="closeModal()">Tutup Modal</button>
-                            </div>
-                            <!-- Tombol Simpan -->
-                            <div class="flex-shrink-0">
-                                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md">Simpan</button>
-                            </div>
-                        </div>
-                    </form>
+                    <!-- Dropdown menu -->
+                    <div id="dropdown" class="absolute z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+                            <li>
+                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Mobile Legends</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Free Fire</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Pubg</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Valorant</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!--/container-->
 
-        <!-- jQuery -->
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-
-        <!--Datatables -->
-        <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
-        <script>
-            $(document).ready(function() {
-
-                var table = $('#example').DataTable({
-                        responsive: true
-                    })
-                    .columns.adjust()
-                    .responsive.recalc();
-            });
-        </script>
-
+            <div class="flex justify-between">
+                <div class="w-1/2 py-2">
+                    <p>Title</p>
+                </div>
+                <div class=" py-2">
+                    <input type="text" id="title" name="title" class="w-96 dark:bg-gray-200 dark:text-gray-200 mt-1 p-2 border rounded-3xl" placeholder="Judul Price">
+                </div>
+            </div>
+            <div class="flex justify-between">
+                <div class="w-1/2 py-2">
+                    <p>Nominal</p>
+                </div>
+                <div class="py-2">
+                    <input type="number" id="nominal" name="nominal" class="w-96 dark:bg-gray-200 dark:text-gray-200 mt-1 p-2 border rounded-3xl" placeholder="Nominal Price">
+                </div>
+            </div>
+            <div class="mt-4">
+                <div class="flex justify-end">
+                    <button type="submit" class="mx-1 dark:hover:bg-blue-500 dark:bg-blue-600 w-28 text-center mt-1 p-2 rounded-lg ">
+                        <h4>Save</h4>
+                    </button>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
 
-<!-- Modal JavaScript -->
-<script>
-    function openModal() {
-        document.getElementById('modal').classList.remove('hidden');
-    }
 
-    function closeModal() {
-        document.getElementById('modal').classList.add('hidden');
-    }
-</script>
-
-<script src="../path/to/datatables.min.js"></script>
+</div>
 
 @stop

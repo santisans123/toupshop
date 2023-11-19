@@ -18,4 +18,8 @@ class Order extends Model
     public function nominal(){
         return $this->belongsTo(Nominal::class);
     }
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }
