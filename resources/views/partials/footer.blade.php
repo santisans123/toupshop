@@ -59,7 +59,7 @@
                         <a href="#" class="hover:underline">Pertanyaan Bisnis</a>
                     </li>
                     <li>
-                        <a href="#" class="hover:underline">moore@zayratshop.com</a>
+                        <a href="#" class="hover:underline">sugarprasetya.com</a>
                     </li>
                 </ul>
             </div>

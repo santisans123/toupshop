@@ -16,10 +16,15 @@
                         <p class="space-x-7">{{ $activity->keterangan }}</p>
                     </div>
                 </div>
-            </a>
+            </div>
+
+            <div>
+                <!-- Tambahkan elemen untuk menampilkan tanggal di sini -->
+                <p class="text-md dark:text-gray-400">10.30 | 12-11-2023</p>
+            </div>
         </div>
         @endforeach
-        
+
         {{-- <div class="my-2 flex justify-start">
             <a href="">
                 <div class="flex justify-start grid-cols-1 md:grid-cols-2 gap-1">
@@ -48,7 +53,7 @@
         </div> --}}
 
         <div class="flex justify-end">
-            <a href="">
+            <a href="{{ route('listRecentOrder') }}">
                 <div class="mx-1 dark:hover:bg-blue-500 dark:bg-blue-600 w-28 text-center mt-1 p-2 rounded-lg ">
                     <h4>More</h4>
                 </div>

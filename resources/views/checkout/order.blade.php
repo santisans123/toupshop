@@ -96,12 +96,12 @@
                                     </li>
                                     {{-- <li>
                                         <input type="radio" id="nominal_id" name="nominal_id" value="{{ $nominal->id }}" class="hidden peer" required>
-                                        <label for="price" class="border border-gray-200 inline-flex items-center justify-between w-full p-5 text-gray-500 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-white bg-gray-600 dark:hover:bg-gray-700">
-                                            <div class="block">
-                                                <div class="w-full text-md font-semibold">{{ $nominal->title }}</div>
-                                                <div class="w-full">Rp {{ number_format($nominal->nominal) }},-</div>
-                                            </div>
-                                        </label>
+                                    <label for="price" class="border border-gray-200 inline-flex items-center justify-between w-full p-5 text-gray-500 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-white bg-gray-600 dark:hover:bg-gray-700">
+                                        <div class="block">
+                                            <div class="w-full text-md font-semibold">{{ $nominal->title }}</div>
+                                            <div class="w-full">Rp {{ number_format($nominal->nominal) }},-</div>
+                                        </div>
+                                    </label>
                                     </li> --}}
                                     @endforeach
                                 </ul>
@@ -131,31 +131,15 @@
                                         </button>
                                     </h2>
                                     <div id="accordion-open-body-2" class="hidden" aria-labelledby="accordion-open-heading-2">
-                                        <ul class="grid w-full px-16 gap-2 md:grid-cols-4">
+                                        <ul class="grid w-full px-16 gap-2 md:grid-cols-3">
                                             <li>
                                                 <input type="radio" id="dana" name="payment" value="DANA" class="hidden peer" required>
                                                 <label for="dana" class="border border-gray-200 inline-flex items-center justify-between w-full p-5 text-gray-500 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 peer-checked:bg-gray-800 hover:text-gray-400 hover:bg-gray-100 dark:text-dark bg-gray-200 dark:hover:bg-gray-400">
                                                     <div class="block">
-                                                        <img src="{{ url('images/payment/dana.png') }}" class="col-span-1 h-10 " alt="Logo" />
-                                                        <div class="w-full text-md font-semibold">DANA</div>
-                                                    </div>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" id="ovo" name="payment" value="OVO" class="hidden peer" required>
-                                                <label for="ovo" class="border border-gray-200 inline-flex items-center justify-between w-full p-5 text-gray-500 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 peer-checked:bg-gray-800 hover:text-gray-400 hover:bg-gray-100 dark:text-dark bg-gray-200 dark:hover:bg-gray-400">
-                                                    <div class="block">
-                                                        <img src="{{ url('images/payment/ovo.png') }}" class="col-span-1 h-10 " alt="Logo" />
-                                                        <div class="w-full text-md font-semibold">OVO</div>
-                                                    </div>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" id="linkaja" name="payment" value="Linkaja" class="hidden peer" required>
-                                                <label for="linkaja" class="border border-gray-200 inline-flex items-center justify-between w-full p-5 text-gray-500 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 peer-checked:bg-gray-800 hover:text-gray-400 hover:bg-gray-100 dark:text-dark bg-gray-200 dark:hover:bg-gray-400">
-                                                    <div class="block">
-                                                        <img src="{{ url('images/payment/linkaja.png') }}" class="col-span-1 h-10 " alt="Logo" />
-                                                        <div class="w-full text-md font-semibold">LinkAja</div>
+                                                        <center>
+                                                            <img src="{{ url('images/payment/dana.png') }}" class="col-span-1 h-10 " alt="Logo" />
+                                                            <div class="w-full text-md font-semibold">0813311266131 <br> Surya Tegar Prasetya</div>
+                                                        </center>
                                                     </div>
                                                 </label>
                                             </li>
@@ -163,8 +147,21 @@
                                                 <input type="radio" id="spay" name="payment" value="ShopeePay" class="hidden peer" required>
                                                 <label for="spay" class="border border-gray-200 inline-flex items-center justify-between w-full p-5 text-gray-500 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 peer-checked:bg-gray-800 hover:text-gray-400 hover:bg-gray-100 dark:text-dark bg-gray-200 dark:hover:bg-gray-400">
                                                     <div class="block">
-                                                        <img src="{{ url('images/payment/spay.png') }}" class="col-span-1 h-10 " alt="Logo" />
-                                                        <div class="w-full text-md font-semibold">ShopeePay</div>
+                                                        <center>
+                                                            <img src="{{ url('images/payment/spay.png') }}" class="col-span-1 h-10 " alt="Logo" />
+                                                            <div class="w-full text-md font-semibold">0813311266131 <br> Surya Tegar Prasetya</div>
+                                                        </center>
+                                                    </div>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" id="spay" name="payment" value="Gopay" class="hidden peer" required>
+                                                <label for="spay" class="border border-gray-200 inline-flex items-center justify-between w-full p-5 text-gray-500 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 peer-checked:bg-gray-800 hover:text-gray-400 hover:bg-gray-100 dark:text-dark bg-gray-200 dark:hover:bg-gray-400">
+                                                    <div class="block">
+                                                        <center>
+                                                            <img src="{{ url('images/payment/gopay.png') }}" class="col-span-1 h-10 " alt="Logo" />
+                                                            <div class="w-full text-md font-semibold">0813311266131 <br> Surya Tegar Prasetya</div>
+                                                        </center>
                                                     </div>
                                                 </label>
                                             </li>
@@ -191,47 +188,10 @@
                                                 <input type="radio" id="qris" name="payment" value="QRIS" class="hidden peer" required>
                                                 <label for="qris" class="border border-gray-200 inline-flex items-center justify-between w-full p-5 text-gray-500 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 peer-checked:bg-gray-800 hover:text-gray-400 hover:bg-gray-100 dark:text-dark bg-gray-200 dark:hover:bg-gray-400">
                                                     <div class="block">
-                                                        <div class="w-full text-md font-semibold">Klik Gambar QRIS dibawah untuk melanjutkan</div>
-                                                        <img src="{{ url('images/payment/qris.jpeg') }}" class="col-span-1 h-84 " alt="Logo" />
-
-                                                    </div>
-                                                </label>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <h2 id="accordion-open-heading-3">
-                                        <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 rounded-t-xl focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3" data-accordion-target="#accordion-open-body-3" aria-expanded="true" aria-controls="accordion-open-body-3">
-                                            <div class="mt-2 w-full px-4 grid grid-rows-1 ">
-                                                <div class="dark:bg-gray-600 rounded-t-md">
-                                                    <p class="py-2 px-4">Convenience Store</p>
-                                                </div>
-                                                <div class="dark:bg-white rounded-b-md flex items-end justify-end grid-cols-1 md:grid-cols-2 gap-4">
-                                                    <img src="{{ url('images/payment/indoalfa.png') }}" class="h-10 mr-3" alt="Logo" />
-                                                    <svg data-accordion-icon class="mb-2 w-5 h-5 rotate-180 shrink-0 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5" />
-                                                    </svg>
-                                                </div>
-
-                                            </div>
-                                        </button>
-                                    </h2>
-                                    <div id="accordion-open-body-3" class="hidden" aria-labelledby="accordion-open-heading-2">
-                                        <ul class="grid w-full px-16 gap-2 md:grid-cols-2">
-                                            <li>
-                                                <input type="radio" id="indomaret" name="payment" value="Indomaret" class="hidden peer" required>
-                                                <label for="indomaret" class="border border-gray-200 inline-flex items-center justify-between w-full p-5 text-gray-500 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 peer-checked:bg-gray-800 hover:text-gray-400 hover:bg-gray-100 dark:text-dark bg-gray-200 dark:hover:bg-gray-400">
-                                                    <div class="block">
-                                                        <img src="{{ url('images/payment/indomaret.png') }}" class="col-span-1 h-10 " alt="Logo" />
-                                                        <div class="w-full text-md font-semibold">Indomaret</div>
-                                                    </div>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" id="alfamaret" name="payment" value="Alfamaret" class="hidden peer" required>
-                                                <label for="alfamaret" class="border border-gray-200 inline-flex items-center justify-between w-full p-5 text-gray-500 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 peer-checked:bg-gray-800 hover:text-gray-400 hover:bg-gray-100 dark:text-dark bg-gray-200 dark:hover:bg-gray-400">
-                                                    <div class="block">
-                                                        <img src="{{ url('images/payment/alfamart.png') }}" class="col-span-1 h-10 " alt="Logo" />
-                                                        <div class="w-full text-md font-semibold">Alfamart</div>
+                                                        <center>
+                                                            <div class="w-full text-md font-semibold">Klik Gambar QRIS dibawah untuk melanjutkan</div>
+                                                            <img src="{{ url('images/payment/qris.jpg') }}" class="col-span-1 h-84 " alt="Logo" />
+                                                        </center>
                                                     </div>
                                                 </label>
                                             </li>
@@ -254,31 +214,15 @@
                                         </button>
                                     </h2>
                                     <div id="accordion-open-body-4" class="hidden" aria-labelledby="accordion-open-heading-2">
-                                        <ul class="grid w-full px-16 gap-2 md:grid-cols-3">
+                                        <ul class="grid w-full px-16 gap-2 md:grid-cols-2">
                                             <li>
                                                 <input type="radio" id="bca" name="payment" value="BCA" class="hidden peer" required>
                                                 <label for="bca" class="border border-gray-200 inline-flex items-center justify-between w-full p-5 text-gray-500 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 peer-checked:bg-gray-800 hover:text-gray-400 hover:bg-gray-100 dark:text-dark bg-gray-200 dark:hover:bg-gray-400">
                                                     <div class="block">
-                                                        <img src="{{ url('images/payment/bca.png') }}" class="col-span-1 h-10 " alt="Logo" />
-                                                        <div class="w-full text-md font-semibold">BCA</div>
-                                                    </div>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" id="bni" name="payment" value="BNI" class="hidden peer" required>
-                                                <label for="bni" class="border border-gray-200 inline-flex items-center justify-between w-full p-5 text-gray-500 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 peer-checked:bg-gray-800 hover:text-gray-400 hover:bg-gray-100 dark:text-dark bg-gray-200 dark:hover:bg-gray-400">
-                                                    <div class="block">
-                                                        <img src="{{ url('images/payment/bni.png') }}" class="col-span-1 h-10 " alt="Logo" />
-                                                        <div class="w-full text-md font-semibold">BNI</div>
-                                                    </div>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" id="bri" name="payment" value="BRI" class="hidden peer" required>
-                                                <label for="bri" class="border border-gray-200 inline-flex items-center justify-between w-full p-5 text-gray-500 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 peer-checked:bg-gray-800 hover:text-gray-400 hover:bg-gray-100 dark:text-dark bg-gray-200 dark:hover:bg-gray-400">
-                                                    <div class="block">
-                                                        <img src="{{ url('images/payment/bri.png') }}" class="col-span-1 h-10 " alt="Logo" />
-                                                        <div class="w-full text-md font-semibold">BRI</div>
+                                                        <center>
+                                                            <img src="{{ url('images/payment/bca.png') }}" class="col-span-1 h-10 " alt="Logo" />
+                                                            <div class="w-full text-md font-semibold">7265044671 <br> Surya Tegar Prasetya</div>
+                                                        </center>
                                                     </div>
                                                 </label>
                                             </li>
@@ -286,17 +230,10 @@
                                                 <input type="radio" id="mandiri" name="payment" value="Mandiri" class="hidden peer" required>
                                                 <label for="mandiri" class="border border-gray-200 inline-flex items-center justify-between w-full p-5 text-gray-500 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 peer-checked:bg-gray-800 hover:text-gray-400 hover:bg-gray-100 dark:text-dark bg-gray-200 dark:hover:bg-gray-400">
                                                     <div class="block">
-                                                        <img src="{{ url('images/payment/mandiri.png') }}" class="col-span-1 h-10 " alt="Logo" />
-                                                        <div class="w-full text-md font-semibold">Mandiri</div>
-                                                    </div>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <input type="radio" id="permatabank" name="payment" value="Permata Bank" class="hidden peer" required>
-                                                <label for="permatabank" class="border border-gray-200 inline-flex items-center justify-between w-full p-5 text-gray-500 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 peer-checked:bg-gray-800 hover:text-gray-400 hover:bg-gray-100 dark:text-dark bg-gray-200 dark:hover:bg-gray-400">
-                                                    <div class="block">
-                                                        <img src="{{ url('images/payment/permatabank.png') }}" class="col-span-1 h-10 " alt="Logo" />
-                                                        <div class="w-full text-md font-semibold">Permata Bank</div>
+                                                        <center>
+                                                            <img src="{{ url('images/payment/mandiri.png') }}" class="col-span-1 h-10 " alt="Logo" />
+                                                            <div class="w-full text-md font-semibold">1400022102231 <br> Surya Tegar Prasetya</div>
+                                                        </center>
                                                     </div>
                                                 </label>
                                             </li>
@@ -317,10 +254,10 @@
                         <div class="row-span-1">
                             <div class="block p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
 
-                                <h4>Nomor Whatsapp</h4>
+                                <h4>Nomor Whatsapp (Tanpa 0 diawal)</h4>
                                 <hr>
                                 <div class="mt-4">
-                                    <input type="number" id="whatsapp" name="whatsapp" class="dark:text-gray-800 mt-1 p-2 border rounded-3xl w-full" placeholder="08xxxxxxxxxxxx" required>
+                                    <input type="number" id="whatsapp" name="whatsapp" class="dark:text-gray-800 mt-1 p-2 border rounded-3xl w-full" placeholder="8154xxxxxxx" required>
                                 </div>
                                 <p class="mt-4 text-sm text-gray-300">Bukti pembelianmu akan kami kirimkan ke WhatsApp.</p>
                                 <button type="submit" class="dark:hover:bg-blue-500 bg-blue-400 w-48 text-center mt-1 p-2 rounded-3xl" form="orderForm">
