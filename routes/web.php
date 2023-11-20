@@ -46,6 +46,7 @@ Route::controller(ItemController::class)->group(function() {
     Route::post('/admin/create-price-store', 'createPriceStore')->name('createPrice');
     Route::post('/admin/update-price', 'updatePrice')->name('updatePrice');
     Route::post('/admin/delete-price', 'deletePrice')->name('deletePrice');
+    Route::get('/history-transaction', 'historyTransaction')->name('historyTransaction');
 });
 
 Route::controller(UserController::class)->group(function() {

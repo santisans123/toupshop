@@ -29,6 +29,11 @@ class ItemController extends Controller
         return view('admin/item_order');
     }
 
+    public function historyTransaction()
+    {
+        return view('history_transaction');
+    }
+
     public function createItemStore(Request $request)
     {
         $file = $request->file('photo');
@@ -64,7 +69,7 @@ class ItemController extends Controller
     {
         $items = Item::all();
         $nominals = Nominal::all();
-        
+
         return view('admin/list_price', compact(['nominals', 'items']));
     }
 

@@ -5,65 +5,120 @@
     <div class="block p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <h4>Change Id Order</h4>
         <hr class="my-2">
+
         <div class="flex justify-between">
             <div class="w-1/2 py-2">
-                <p>Product</p>
+                <p>Jenis Game</p>
             </div>
-            <a href="">
-                <div class="w-3/2 py-2">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-1">
-                        <input type="email" id="email" name="email" class="w-96 dark:bg-gray-200 dark:text-gray-200 mt-1 p-2 border rounded-3xl w-full" placeholder="Email Pelanggan">
-                        <!-- <svg class="w-6 h-6 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-                        </svg> -->
-                    </div>
+
+            <div class="relative">
+                <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="w-96 dark:bg-gray-800 dark:text-gray-200 mt-1 border rounded-3xl flex items-center justify-between px-4 py-2" onclick="toggleDropdown(event)">
+                    Pilih Game
+                    <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
+                    </svg>
+                </button>
+                <input type="hidden" name="selectedItem" id="selectedItem" value="{{ old('selectedItem') }}">
+                <input type="hidden" name="selectedItemName" id="selectedItemName" value="{{ old('selectedItemName') }}">
+                <!-- Dropdown menu -->
+                <div id="dropdown" class="absolute z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                    <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+
+                        <li>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" onclick="selectItem()">Ml</a>
+                        </li>
+
+                    </ul>
                 </div>
-            </a>
+            </div>
         </div>
         <div class="flex justify-between">
             <div class="w-1/2 py-2">
-                <p>Pesan</p>
+                <p>Email User</p>
             </div>
-            <a href="">
-                <div class="w-3/2 py-2">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-1">
-                        <input type="number" id="item_id" name="item_id" class="w-96 dark:bg-gray-200 dark:text-gray-200 mt-1 p-2 border rounded-3xl " placeholder="Item ID">
-                        <!-- <svg class="w-6 h-6 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-                        </svg> -->
-                    </div>
+            <div class="py-2">
+                <input style="color:black" type="email" id="email" name="email" class="w-96 dark:bg-gray-200 dark:text-gray-200 mt-1 p-2 border rounded-3xl" placeholder="Email">
+            </div>
+        </div>
+        <div class="flex justify-between">
+            <div class="w-1/2 py-2">
+                <p>Whatsapp User</p>
+            </div>
+            <div class="py-2">
+                <input style="color:black" type="number" id="wa" name="wa" class="w-96 dark:bg-gray-200 dark:text-gray-200 mt-1 p-2 border rounded-3xl" placeholder="Whatsapp">
+            </div>
+        </div>
+        <div class="flex justify-between">
+            <div class="w-1/2 py-2">
+                <p>Jenis Game</p>
+            </div>
+
+            <div class="relative">
+                <button id="dropdownDefaultButton2" data-dropdown-toggle="dropdown2" class="w-96 dark:bg-gray-800 dark:text-gray-200 mt-1 border rounded-3xl flex items-center justify-between px-4 py-2" onclick="toggleDropdown(event)">
+                    Pilih Payment
+                    <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
+                    </svg>
+                </button>
+                <input type="hidden" name="selectPayemnt" id="selectPayemnt" value="">
+                <input type="hidden" name="selectedPayemntName" id="selectedPayemntName" value="">
+                <!-- Dropdown menu -->
+                <div id="dropdown2" class="absolute z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                    <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+
+                        <li>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" onclick="selectPayemnt()">QRIS</a>
+                        </li>
+                        <li>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" onclick="selectPayemnt()">Dana</a>
+                        </li>
+                        <li>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" onclick="selectPayemnt()">Ovo</a>
+                        </li>
+                        <li>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" onclick="selectPayemnt()">Link Aja</a>
+                        </li>
+                        <li>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" onclick="selectPayemnt()">SPay</a>
+                        </li>
+                        <li>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" onclick="selectPayemnt()">Alfamart</a>
+                        </li>
+                        <li>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" onclick="selectPayemnt()">Indomaret</a>
+                        </li>
+                        <li>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" onclick="selectPayemnt()">Bank BCA</a>
+                        </li>
+                        <li>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" onclick="selectPayemnt()">Bank BNI</a>
+                        </li>
+                        <li>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" onclick="selectPayemnt()">Bank BRI</a>
+                        </li>
+                        <li>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" onclick="selectPayemnt()">Bank Mandiri</a>
+                        </li>
+
+                    </ul>
                 </div>
-            </a>
+            </div>
         </div>
         <div class="flex justify-between">
             <div class="w-1/2 py-2">
                 <p>ID Game</p>
             </div>
-            <a href="">
-                <div class="w-3/2 py-2">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-1">
-                        <input type="number" id="game_id" name="game_id" class="dark:bg-gray-200 dark:text-gray-200 mt-1 p-2 border rounded-3xl w-96" placeholder="Game ID">
-                        <!-- <svg class="w-6 h-6 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-                        </svg> -->
-                    </div>
-                </div>
-            </a>
+            <div class="py-2">
+                <input style="color:black" type="id_game" id="id_game" name="id_game" class="w-96 dark:bg-gray-200 dark:text-gray-200 mt-1 p-2 border rounded-3xl" placeholder="ID Game">
+            </div>
         </div>
         <div class="flex justify-between">
             <div class="w-1/2 py-2">
                 <p>Server Game</p>
             </div>
-            <a href="">
-                <div class="w-5/2 py-2">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-1">
-                        <input type="number" id="game_id" name="game_id" class="dark:bg-gray-200 dark:text-gray-200 mt-1 p-2 border rounded-3xl w-96" placeholder="Server Game">
-                        <!-- <svg class="w-6 h-6 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-                        </svg> -->
-                    </div>
-                </div>
-            </a>
+            <div class="py-2">
+                <input style="color:black" type="server_game" id="server_game" name="server_game" class="w-96 dark:bg-gray-200 dark:text-gray-200 mt-1 p-2 border rounded-3xl" placeholder="Server Game">
+            </div>
         </div>
         <div class="flex justify-between mt-4">
             <a href="">
@@ -75,11 +130,6 @@
                 <a href="">
                     <div class="mx-1 dark:hover:bg-gray-500 dark:bg-gray-600 w-auto text-center mt-1 p-2 rounded-lg ">
                         <h4>Save and Add Another</h4>
-                    </div>
-                </a>
-                <a href="">
-                    <div class="mx-1 dark:hover:bg-gray-500 dark:bg-gray-600 w-auto text-center mt-1 p-2 rounded-lg ">
-                        <h4>Save and Continue Editing</h4>
                     </div>
                 </a>
                 <a href="">

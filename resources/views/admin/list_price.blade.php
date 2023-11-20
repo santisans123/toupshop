@@ -5,7 +5,7 @@
     <div class="block p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
 
         <div class="flex justify-between">
-            <a href="productPrice" class="mx-1 dark:hover:bg-gray-500 dark:bg-gray-600 w-28 text-center mt-1 p-2 rounded-lg">
+            <a href="{{ route('productPrice') }}" class="mx-1 dark:hover:bg-gray-500 dark:bg-gray-600 w-28 text-center mt-1 p-2 rounded-lg">
                 <button>Back</button>
             </a>
             <h4 class="text-left">Product Price List</h4>
@@ -41,7 +41,7 @@
                                         <a href="#" class="mx-1 p-2 rounded-lg" onclick="openModal('{{ $nominal->id }}')">
                                             <i class="fas fa-edit text-xl text-blue-500"></i>
                                         </a>
-    
+
                                         <a href="#" class="mx-1 p-2 rounded-lg"  onclick="openDeleteModal('{{ $nominal->id }}')">
                                             <i class="dark:text-red-600 fas fa-trash text-xl"></i>
                                         </a>
@@ -62,7 +62,7 @@
                                             <div class="w-1/2 py-2">
                                                 <p>Jenis Game</p>
                                             </div>
-                            
+
                                             <div class="relative">
                                                 @php
                                                     $selectedItemName = optional($nominal->item)->name ?? '-- Pilih Item --';
@@ -80,14 +80,14 @@
                                                     <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton-{{ $nominal->id }}">
                                                         @foreach ($items as $item)
                                                         <li>
-                                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" onclick="selectItem('{{ $item->id }}', '{{ $item->name }}', '{{ $nominal->id }}')">{{ $item->name }}</a>   
+                                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" onclick="selectItem('{{ $item->id }}', '{{ $item->name }}', '{{ $nominal->id }}')">{{ $item->name }}</a>
                                                         </li>
                                                         @endforeach
                                                     </ul>
                                                 </div>
                                             </div>
                                         </div>
-                            
+
                                         <div class="flex justify-between">
                                             <div class="w-1/2 py-2">
                                                 <p>Title</p>
@@ -123,7 +123,7 @@
                             <div class="flex justify-center items-center min-h-screen">
                                 <div class="bg-white text-gray-800 p-8 rounded-lg w-full max-w-xl">
                                     <!-- Modal Content -->
-                                    <center><h3 class="text-xl font-bold mb-4">Apakah Anda yakin ingin menghapus nominal ini?</h3></center>    
+                                    <center><h3 class="text-xl font-bold mb-4">Apakah Anda yakin ingin menghapus nominal ini?</h3></center>
                                     <div class="flex-shrink-0 mt-4 text-center">
                                         <div class="inline-flex items-center justify-center">
                                             <button class="text-gray-200 bg-gray-600 hover:text-gray-300 py-2 px-4 rounded-md" onclick="closeDeleteModal('{{ $nominal->id }}')">Tidak</button>
@@ -133,7 +133,7 @@
                                                 <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded-md ml-2">Yakin</button>
                                             </form>
                                         </div>
-                                    </div>                           
+                                    </div>
                                 </div>
                             </div>
                         </div>
