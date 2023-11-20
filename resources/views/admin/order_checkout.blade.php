@@ -17,6 +17,7 @@
                         <thead>
                             <tr>
                                 <th data-priority="1">No</th>
+                                <th data-priority="1">No. Transaksi</th>
                                 <th data-priority="2">Nama</th>
                                 <th data-priority="3">Game</th>
                                 <th data-priority="3">Status</th>
@@ -28,6 +29,9 @@
                                 <tr>
                                     <td>
                                         <center>{{ ++$key }}</center>
+                                    </td>
+                                    <td>
+                                        <center>{{ $order->trx_num }}</center>
                                     </td>
                                     <td>{{ optional($order->user)->name ?: 'User tidak ditemukan' }}</td>
                                     <td>{{ optional($order->item)->name ?: 'Produk tidak ditemukan' }}</td>
@@ -89,6 +93,10 @@
                     <div class="overflow-x-auto">
                         <table class="min-w-full bg-white border rounded-md">
                             <tbody>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">No Transaksi</td>
+                                    <td class="py-2 px-4 border-b">{{ $order->trx_num }}</td>
+                                </tr>
                                 <tr>
                                     <td class="py-2 px-4 border-b">Server ID</td>
                                     <td class="py-2 px-4 border-b">{{ $order->serverid }}</td>

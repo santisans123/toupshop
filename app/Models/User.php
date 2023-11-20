@@ -63,4 +63,8 @@ class User extends Authenticatable
     public function order(){
         return $this->hasMany(Order::class);
     }
+
+    public function logAdmin(){
+        return $this->hasMany(LogAdmin::class);
+    }
 }

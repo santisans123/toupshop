@@ -16,6 +16,7 @@ class OrderSeeder extends Seeder
         Order::insert(
             [
                 [
+                    'trx_num' => 'hsdhdb1233sda',
                     'user_id' => 1,
                     'item_id' => 1,
                     'uid' => '123456789',
@@ -28,6 +29,7 @@ class OrderSeeder extends Seeder
                     'created_at' => '2023-11-19 17:58:32'
                 ],
                 [
+                    'trx_num' => 'hsdhdb12322da',
                     'user_id' => 2,
                     'item_id' => 2,
                     'uid' => '987654321',

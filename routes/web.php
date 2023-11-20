@@ -26,32 +26,34 @@ Route::controller(AuthecticationController::class)->group(function() {
 
 Route::controller(OrderController::class)->group(function() {
     Route::get('/order/{id}', 'detailItem')->name('order');
+    Route::get('/getNominals/{itemId}', 'getNominals')->name('getNominals');
     Route::post('/order', 'createOrderUser')->name('orderUser')->middleware('checkLogin');
-    Route::get('/admin/create-order', 'createOrderAdmin')->name('orderAdmin');
-    Route::post('/admin/update-order', 'updateOrder')->name('updateOrder');
-    Route::post('/admin/delete-order', 'DeleteOrder')->name('deleteOrder');
-    Route::get('/admin/recent-order', 'recentOrder')->name('recentOrder');
-    Route::get('/admin/order-checkout', 'orderCheckoutAdmin')->name('orderCheckout');
-});
+    Route::get('/admin/create-order', 'createOrderAdmin')->name('orderAdmin')->middleware('checkLogin');
+    Route::post('/admin/create-order-store', 'createOrderAdminStore')->name('createOrderAdmin')->middleware('checkLogin');
+    Route::post('/admin/update-order', 'updateOrder')->name('updateOrder')->middleware('checkLogin');
+    Route::post('/admin/delete-order', 'DeleteOrder')->name('deleteOrder')->middleware('checkLogin');
+    Route::get('/admin/recent-order', 'recentOrder')->name('recentOrder')->middleware('checkLogin');
+    Route::get('/admin/order-checkout', 'orderCheckoutAdmin')->name('orderCheckout')->middleware('checkLogin');
+    Route::get('/history-transaction', 'historyTransaction')->name('historyTransaction')->middleware('checkLogin');
+})->middleware('checkLogin');
 
 Route::controller(ItemController::class)->group(function() {
     Route::get('/', 'index')->name('home');
-    Route::get('/admin/list-items', 'listItem')->name('listItems');
+    Route::get('/admin/list-items', 'listItem')->name('listItems')->middleware('checkLogin');
     Route::get('/admin/create-item', 'createItem')->name('createItem');
-    Route::post('/admin/create-item', 'createItemStore')->name('createItemStore');
-    Route::post('/admin/update-item', 'updateItem')->name('updateItem');
-    Route::post('/admin/delete-item', 'deleteItem')->name('deleteItem');
-    Route::get('/admin/list-price', 'listPrice')->name('listPrice');
-    Route::get('/admin/create-price', 'createPrice')->name('productPrice');
-    Route::post('/admin/create-price-store', 'createPriceStore')->name('createPrice');
-    Route::post('/admin/update-price', 'updatePrice')->name('updatePrice');
-    Route::post('/admin/delete-price', 'deletePrice')->name('deletePrice');
-    Route::get('/history-transaction', 'historyTransaction')->name('historyTransaction');
+    Route::post('/admin/create-item', 'createItemStore')->name('createItemStore')->middleware('checkLogin');
+    Route::post('/admin/update-item', 'updateItem')->name('updateItem')->middleware('checkLogin');
+    Route::post('/admin/delete-item', 'deleteItem')->name('deleteItem')->middleware('checkLogin');
+    Route::get('/admin/list-price', 'listPrice')->name('listPrice')->middleware('checkLogin');
+    Route::get('/admin/create-price', 'createPrice')->name('productPrice')->middleware('checkLogin');
+    Route::post('/admin/create-price-store', 'createPriceStore')->name('createPrice')->middleware('checkLogin');
+    Route::post('/admin/update-price', 'updatePrice')->name('updatePrice')->middleware('checkLogin');
+    Route::post('/admin/delete-price', 'deletePrice')->name('deletePrice')->middleware('checkLogin');
 });
 
 Route::controller(UserController::class)->group(function() {
-    Route::get('/admin/list-user', 'listUser')->name('listUser');
-    Route::post('/admin/delete-user', 'deleteUser')->name('deleteUser');
+    Route::get('/admin/list-user', 'listUser')->name('listUser')->middleware('checkLogin');
+    Route::post('/admin/delete-user', 'deleteUser')->name('deleteUser')->middleware('checkLogin');
 });
 
 // Route::get('/', function () {
