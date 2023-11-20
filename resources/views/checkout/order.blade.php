@@ -317,10 +317,10 @@
                         <div class="row-span-1">
                             <div class="block p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
 
-                                <h4>Nomor Whatsapp</h4>
+                                <h4>Nomor Whatsapp (Tanpa 0 diawal)</h4>
                                 <hr>
                                 <div class="mt-4">
-                                    <input type="number" id="whatsapp" name="whatsapp" class="dark:text-gray-800 mt-1 p-2 border rounded-3xl w-full" placeholder="08xxxxxxxxxxxx" required>
+                                    <input type="number" id="whatsapp" name="whatsapp" class="dark:text-gray-800 mt-1 p-2 border rounded-3xl w-full" placeholder="8154xxxxxxx" required>
                                 </div>
                                 <p class="mt-4 text-sm text-gray-300">Bukti pembelianmu akan kami kirimkan ke WhatsApp.</p>
                                 <button type="submit" class="dark:hover:bg-blue-500 bg-blue-400 w-48 text-center mt-1 p-2 rounded-3xl" form="orderForm">

@@ -42,10 +42,10 @@
         </div>
         <div class="flex justify-between">
             <div class="w-1/2 py-2">
-                <p>Whatsapp User</p>
+                <p>Whatsapp User (Tanpa 0 awal)</p>
             </div>
             <div class="py-2">
-                <input style="color:black" type="number" id="wa" name="wa" class="w-96 dark:bg-gray-200 dark:text-gray-200 mt-1 p-2 border rounded-3xl" placeholder="Whatsapp">
+                <input style="color:black" type="number" id="wa" name="wa" class="w-96 dark:bg-gray-200 dark:text-gray-200 mt-1 p-2 border rounded-3xl" placeholder="815423xxxx">
             </div>
         </div>
         <div class="flex justify-between">

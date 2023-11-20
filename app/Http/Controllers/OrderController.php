@@ -48,6 +48,12 @@ class OrderController extends Controller
         return view('admin/order_checkout', compact('orders'));
     }
 
+    public function listRecentOrder()
+    {
+        $orders = Order::all();
+        return view('admin/list_recent', compact('orders'));
+    }
+
     public function recentOrder()
     {
         $histories = Order::all();

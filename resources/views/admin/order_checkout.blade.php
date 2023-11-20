@@ -4,7 +4,7 @@
     <div class="col-span-2">
         <div class="block p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
 
-            <h4 class="text-left">List Item</h4>
+            <h4 class="text-left">List Order</h4>
 
             <hr class="my-2">
             <!--Container-->

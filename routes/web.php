@@ -31,6 +31,7 @@ Route::controller(OrderController::class)->group(function() {
     Route::post('/admin/update-order', 'updateOrder')->name('updateOrder');
     Route::post('/admin/delete-order', 'DeleteOrder')->name('deleteOrder');
     Route::get('/admin/recent-order', 'recentOrder')->name('recentOrder');
+    Route::get('/admin/list-recent', 'listRecentOrder')->name('listRecentOrder');
     Route::get('/admin/order-checkout', 'orderCheckoutAdmin')->name('orderCheckout');
 });
 

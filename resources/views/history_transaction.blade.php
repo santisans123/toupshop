@@ -129,7 +129,7 @@
     @livewire('navigation-menu')
 
     <div class="px-32 py-10 dark:text-white bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
-        <div class="w-full">
+        <div class="w-full mb-6">
             <img class="h-auto w-full rounded-lg" src="{{ url('images/images3.png') }}" alt="header_image">
         </div>
         <div class="w-full block p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
@@ -263,7 +263,7 @@
                                 <td class="py-2 px-4 border-b"></td>
                             </tr>
                             <tr>
-                                <td class="py-2 px-4 border-b">Tanggal Transaksi</td>
+                                <td class="py-2 px-4 border-b">Waktu Transaksi</td>
                                 <td class="py-2 px-4 border-b"></td>
                             </tr>
                         </tbody>

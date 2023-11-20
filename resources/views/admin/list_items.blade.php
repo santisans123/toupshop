@@ -8,7 +8,7 @@
             <a href="{{ route('createItem') }}" class="mx-1 dark:hover:bg-gray-500 dark:bg-gray-600 w-28 text-center mt-1 p-2 rounded-lg">
                 <button>Back</button>
             </a>
-            <h4 class="text-left">List Item</h4>
+            <h4 class="text-left">List Order</h4>
 
         </div>
 
@@ -52,10 +52,10 @@
                                 <div class="bg-white text-gray-800 p-8 rounded-lg w-96">
                                     <!-- Modal Content -->
                                     <h2 class="text-2xl font-bold mb-4">Gambar Produk</h2>
-                                    <img src="{{ asset($item->image) }}">      
+                                    <img src="{{ asset($item->image) }}">
                                     <div class="flex-shrink-0 mt-4">
                                         <button class="text-gray-200 bg-gray-600 hover:text-gray-300 py-2 px-4 rounded-md w-full" onclick="closeImageModal('{{ $item->id }}')">Tutup</button>
-                                    </div>                              
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -73,19 +73,19 @@
                                             <label for="name" class="block text-sm font-medium text-gray-700">Nama</label>
                                             <input type="text" id="name" name="name" class="mt-1 p-2 border rounded-md w-full" placeholder="Masukkan nama" value="{{ $item->name }}">
                                         </div>
-                
+
                                         <!-- Keterangan Input -->
                                         <div class="mb-4">
                                             <label for="description" class="block text-sm font-medium text-gray-700">Keterangan</label>
                                             <textarea id="description" name="description" class="mt-1 p-2 border rounded-md w-full" placeholder="Masukkan keterangan">{{ $item->description }}</textarea>
                                         </div>
-                
+
                                         <!-- Upload Gambar Input -->
                                         <div class="mb-4">
                                             <label for="photo" class="block text-sm font-medium text-gray-700">Upload Gambar</label>
                                             <input type="file" id="photo" name="photo" class="mt-1 p-2 border rounded-md w-full">
                                         </div>
-                
+
                                         <div class="flex justify-between">
                                             <!-- Tombol Keluar Modal -->
                                             <div class="flex-shrink-0">
@@ -105,7 +105,7 @@
                             <div class="flex justify-center items-center min-h-screen">
                                 <div class="bg-white text-gray-800 p-8 rounded-lg w-full max-w-xl">
                                     <!-- Modal Content -->
-                                    <center><h3 class="text-xl font-bold mb-4">Apakah Anda yakin ingin menghapus produk ini?</h3></center>    
+                                    <center><h3 class="text-xl font-bold mb-4">Apakah Anda yakin ingin menghapus produk ini?</h3></center>
                                     <div class="flex-shrink-0 mt-4 text-center">
                                         <div class="inline-flex items-center justify-center">
                                             <button class="text-gray-200 bg-gray-600 hover:text-gray-300 py-2 px-4 rounded-md" onclick="closeDeleteModal('{{ $item->id }}')">Tidak</button>
@@ -115,7 +115,7 @@
                                                 <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded-md ml-2">Yakin</button>
                                             </form>
                                         </div>
-                                    </div>                           
+                                    </div>
                                 </div>
                             </div>
                         </div>
