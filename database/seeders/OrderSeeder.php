@@ -25,8 +25,9 @@ class OrderSeeder extends Seeder
                     'payment' => 'BCA',
                     'account_name' => 'user 1',
                     'whatsapp' => '08961276371623',
-                    'status' => 0,
-                    'created_at' => '2023-11-19 17:58:32'
+                    'status' => 1,
+                    'created_at' => '2023-11-19 17:58:32',
+                    'updated_at' => '2023-11-19 17:58:32'
                 ],
                 [
                     'trx_num' => 'hsdhdb12322da',
@@ -38,7 +39,7 @@ class OrderSeeder extends Seeder
                     'payment' => 'Indomaret',
                     'account_name' => 'user 2',
                     'whatsapp' => '081928319892312',
-                    'status' => 1,
+                    'status' => 0,
                     'created_at' => '2023-11-19 17:58:32'
                 ],
             ]

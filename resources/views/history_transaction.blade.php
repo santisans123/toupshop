@@ -164,8 +164,8 @@
                                 </td>
                                 <td><center>{{ $order->trx_num }}</center></td>
                                 <td><center>{{ date_format($order->created_at, 'd-m-Y | h:m') }}</center></td>
-                                <td>{{ optional($order->item)->name }}</td>
-                                <td>{{ optional($order->nominal)->title }}</td>
+                                <td>{{ optional($order->item)->name ?: 'Produk tidak ditemukan' }}</td>
+                                <td>{{ optional($order->nominal)->title ?: 'Nominal Produk tidak ditemukan' }}</td>
                                 <td><center>Rp. {{ number_format(optional($order->nominal)->nominal) }}</center></td>
                                 <td>
                                     <center>

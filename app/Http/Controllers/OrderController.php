@@ -74,16 +74,16 @@ class OrderController extends Controller
         return view('admin/order_checkout', compact('orders'));
     }
 
-    public function listRecentOrder()
-    {
-        $orders =  LogAdmin::where('user_id', Auth::user()->id)->get();
-        return view('admin/list_recent', compact('orders'));
-    }
-
     public function recentOrder()
     {
-        $activities = LogAdmin::where('user_id', Auth::user()->id)->get();
-        return view('admin/recent', compact('activities'));
+        $orders = Order::where('status', 1)->orderBy('updated_at', 'desc')->limit(5)->get();
+        return view('admin/recent', compact('orders'));
+    }
+
+    public function listRecentOrder()
+    {
+        $orders = Order::where('status', 1)->get();
+        return view('admin/list_recent', compact('orders'));
     }
 
     public function historyTransaction()

@@ -29,45 +29,27 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>
-                                <center>1</center>
-                            </td>
-                            <td>12 Nov 2023 08.30</td>
-                            <td>santi</td>
-                            <td>Mobile Legends</td>
-                            <td>20 Diamond</td>
-                            <td>
-                                <center>
-                                    <a href="#" class="mx-1 p-2 rounded-lg" onclick="openDetailModal()">
-                                        <i class="fas fa-eye text-xl dark:text-blue-500"></i>
-                                    </a>
-                                    <a target="_blank" href="https://wa.me/+6281916451566" class="mx-1 p-2 rounded-lg">
-                                        <i class="fab fa-whatsapp text-xl dark:text-blue-500"></i>
-                                    </a>
-                                </center>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <center>1</center>
-                            </td>
-                            <td>12 Nov 2023 08.30</td>
-                            <td>Free Fire</td>
-                            <td>20 Diamond</td>
-                            <td>Rp 30.000</td>
-                            <td>
-                                <center>
-                                    <a href="#" class="mx-1 p-2 rounded-lg" onclick="openDetailModal()">
-                                        <i class="fas fa-eye text-xl dark:text-blue-500"></i>
-                                    </a>
-                                    <!-- ini wa customer -->
-                                    <a target="_blank" href="https://wa.me/+6282131781704" class="mx-1 p-2 rounded-lg">
-                                        <i class="fab fa-whatsapp text-xl dark:text-blue-500"></i>
-                                    </a>
-                                </center>
-                            </td>
-                        </tr>
+                        @foreach ($orders as $key=>$order)
+                            <tr>
+                                <td>
+                                    <center>{{ ++$key }}</center>
+                                </td>
+                                <td><center>{{ date_format($order->updated_at, 'd-m-Y | h:m') }}</center></td>
+                                <td>{{ optional($order->user)->name ?: 'User tidak ditemukan' }}</td>
+                                <td>{{ optional($order->item)->name ?: 'Produk tidak ditemukan' }}</td>
+                                <td>{{ optional($order->nominal)->title ?: 'Nominal Produk tidak ditemukan' }}</td>
+                                <td>
+                                    <center>
+                                        <a href="#" class="mx-1 p-2 rounded-lg" onclick="openDetailModal('{{ $order->id }}')">
+                                            <i class="fas fa-eye text-xl dark:text-blue-500"></i>
+                                        </a>
+                                        <a target="_blank" href="https://wa.me/{{ $order->whatsapp }}" class="mx-1 p-2 rounded-lg">
+                                            <i class="fab fa-whatsapp text-xl dark:text-blue-500"></i>
+                                        </a>
+                                    </center>
+                                </td>
+                            </tr> 
+                        @endforeach
                     </tbody>
                 </table>
 
@@ -75,67 +57,57 @@
             <!--/Card-->
         </div>
 
-        <!-- Detail Modal -->
-        <div id="detailModal-1" class="fixed inset-0 z-50 hidden overflow-auto bg-black bg-opacity-50">
-            <div class="flex justify-center items-center min-h-screen">
-                <div class="bg-white text-gray-800 p-8 rounded-lg w-full max-w-3xl">
-                    <!-- Modal Content -->
-                    <h2 class="text-2xl font-bold mb-4">Detail Histori Transaksi </h2>
-                    <div class="overflow-x-auto">
-                        <table class="min-w-full bg-white border rounded-md">
-                            <tbody>
-                                <tr>
-                                    <td class="py-2 px-4 border-b">No Transaksi</td>
-                                    <td class="py-2 px-4 border-b"></td>
-                                </tr>
-                                <tr>
-                                    <td class="py-2 px-4 border-b">User ID</td>
-                                    <td class="py-2 px-4 border-b"></td>
-                                </tr>
-                                <tr>
-                                    <td class="py-2 px-4 border-b">Server ID</td>
-                                    <td class="py-2 px-4 border-b"></td>
-                                </tr>
-                                <tr>
-                                    <td class="py-2 px-4 border-b">Nominal</td>
-                                    <td class="py-2 px-4 border-b"></td>
-                                </tr>
-                                <tr>
-                                    <td class="py-2 px-4 border-b">Metode Pembayaran</td>
-                                    <td class="py-2 px-4 border-b"></td>
-                                </tr>
-                                <tr>
-                                    <td class="py-2 px-4 border-b">Akun Atas Nama</td>
-                                    <td class="py-2 px-4 border-b"></td>
-                                </tr>
-                                <tr>
-                                    <td class="py-2 px-4 border-b">WhatsApp</td>
-                                    <td class="py-2 px-4 border-b"></td>
-                                </tr>
-                                <tr>
-                                    <td class="py-2 px-4 border-b">Waktu Transaksi</td>
-                                    <td class="py-2 px-4 border-b"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="mt-4 flex justify-between">
-                        <!-- Tombol Keluar Modal -->
-                        <div class="flex-shrink-0">
-                            <button class="text-gray-200 bg-gray-600 hover:text-gray-300 py-2 px-4 rounded-md" onclick="closeDetailModal()">Tutup Modal</button>
+        @foreach ($orders as $order)
+            <div id="detailModal-{{ $order->id }}" class="fixed inset-0 z-50 hidden overflow-auto bg-black bg-opacity-50">
+                <div class="flex justify-center items-center min-h-screen">
+                    <div class="bg-white text-gray-800 p-8 rounded-lg w-full max-w-3xl">
+                        <!-- Modal Content -->
+                        <h2 class="text-2xl font-bold mb-4">Detail Transaksi</h2>
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full bg-white border rounded-md">
+                                <tbody>
+                                    <tr>
+                                        <td class="py-2 px-4 border-b">No Transaksi</td>
+                                        <td class="py-2 px-4 border-b">{{ $order->trx_num }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 px-4 border-b">Server ID</td>
+                                        <td class="py-2 px-4 border-b">{{ $order->serverid }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 px-4 border-b">Nominal</td>
+                                        <td class="py-2 px-4 border-b">Rp. {{ number_format($order->nominal->nominal) }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 px-4 border-b">Metode Pembayaran</td>
+                                        <td class="py-2 px-4 border-b">{{ $order->payment }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 px-4 border-b">Akun Atas Nama</td>
+                                        <td class="py-2 px-4 border-b">{{ $order->account_name }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 px-4 border-b">WhatsApp</td>
+                                        <td class="py-2 px-4 border-b">{{ $order->whatsapp }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 px-4 border-b">Tanggal Transaksi</td>
+                                        <td class="py-2 px-4 border-b">{{ $order->created_at }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                        <!-- Tombol Simpan -->
-                        <div class="flex-shrink-0">
-                            <form action="{{ route('updateOrder') }}" method="POST">
-                                @csrf
-                                <input type="hidden" name="id_order" value="">
-                                <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded-md">ACC</button>
-                            </form>
+                        <div class="mt-4 flex justify-between">
+                            <!-- Tombol Keluar Modal -->
+                            <div class="flex-shrink-0">
+                                <button class="text-gray-200 bg-gray-600 hover:text-gray-300 py-2 px-4 rounded-md"
+                                    onclick="closeDetailModal('{{ $order->id }}')">Tutup Modal</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        @endforeach
 
         <!-- jQuery -->
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -157,5 +129,17 @@
 </div>
 
 <script src="../path/to/datatables.min.js"></script>
+
+<script>
+    function openDetailModal(orderId) {
+        var modalId = 'detailModal-' + orderId;
+        document.getElementById(modalId).classList.remove('hidden');
+    }
+
+    function closeDetailModal(orderId) {
+        var modalId = 'detailModal-' + orderId;
+        document.getElementById(modalId).classList.add('hidden');
+    }
+</script>
 
 @stop
