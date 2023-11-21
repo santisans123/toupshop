@@ -61,31 +61,13 @@
                                     <a href="#" class="mx-1 p-2 rounded-lg" onclick="openDetailModal()">
                                         <i class="fas fa-eye text-xl dark:text-blue-500"></i>
                                     </a>
+                                    <!-- ini wa customer -->
                                     <a target="_blank" href="https://wa.me/+6282131781704" class="mx-1 p-2 rounded-lg">
                                         <i class="fab fa-whatsapp text-xl dark:text-blue-500"></i>
                                     </a>
                                 </center>
                             </td>
                         </tr>
-                        <div id="deleteModal-1" class="fixed inset-0 z-50 hidden overflow-auto bg-black bg-opacity-50">
-                            <div class="flex justify-center items-center min-h-screen">
-                                <div class="bg-white text-gray-800 p-8 rounded-lg w-full max-w-xl">
-                                    <!-- Modal Content -->
-                                    <center>
-                                        <h3 class="text-xl font-bold mb-4">Apakah Anda yakin ingin menghapus order ini?</h3>
-                                    </center>
-                                    <div class="flex-shrink-0 mt-4 text-center">
-                                        <div class="inline-flex items-center justify-center">
-                                            <button class="text-gray-200 bg-gray-600 hover:text-gray-300 py-2 px-4 rounded-md" onclick="closeDeleteModal()">Tidak</button>
-                                            <form action="{{ route('deleteOrder') }}" method="POST">
-                                                <input type="hidden" name="id_order" value="">
-                                                <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded-md ml-2">Yakin</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </tbody>
                 </table>
 
