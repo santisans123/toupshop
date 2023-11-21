@@ -32,6 +32,7 @@ Route::controller(OrderController::class)->group(function() {
     Route::post('/admin/create-order-store', 'createOrderAdminStore')->name('createOrderAdmin')->middleware('checkLogin');
     Route::post('/admin/update-order', 'updateOrder')->name('updateOrder')->middleware('checkLogin');
     Route::post('/admin/delete-order', 'DeleteOrder')->name('deleteOrder')->middleware('checkLogin');
+    Route::get('/admin/list-recent', 'listRecentOrder')->name('listRecentOrder')->middleware('checkLogin');
     Route::get('/admin/recent-order', 'recentOrder')->name('recentOrder')->middleware('checkLogin');
     Route::get('/admin/order-checkout', 'orderCheckoutAdmin')->name('orderCheckout')->middleware('checkLogin');
     Route::get('/history-transaction', 'historyTransaction')->name('historyTransaction')->middleware('checkLogin');

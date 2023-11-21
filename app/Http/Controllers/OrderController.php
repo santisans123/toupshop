@@ -76,7 +76,7 @@ class OrderController extends Controller
 
     public function listRecentOrder()
     {
-        $orders = Order::all();
+        $orders =  LogAdmin::where('user_id', Auth::user()->id)->get();
         return view('admin/list_recent', compact('orders'));
     }
 
