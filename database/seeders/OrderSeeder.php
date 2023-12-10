@@ -24,7 +24,7 @@ class OrderSeeder extends Seeder
                     'nominal_id' => 1,
                     'payment' => 'BCA',
                     'account_name' => 'user 1',
-                    'whatsapp' => '08961276371623',
+                    'whatsapp' => '081916451566',
                     'status' => 1,
                     'created_at' => '2023-11-19 17:58:32',
                     'updated_at' => '2023-11-19 17:58:32'
@@ -40,7 +40,8 @@ class OrderSeeder extends Seeder
                     'account_name' => 'user 2',
                     'whatsapp' => '081928319892312',
                     'status' => 0,
-                    'created_at' => '2023-11-19 17:58:32'
+                    'created_at' => '2023-11-19 17:58:32',
+                    'updated_at' => '2023-11-19 17:58:32'
                 ],
             ]
         );
